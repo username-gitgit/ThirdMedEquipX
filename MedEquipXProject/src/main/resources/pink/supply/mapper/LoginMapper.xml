@@ -3,6 +3,12 @@
 
 <mapper namespace="pink.supply.mapper.LoginMapper">
 
-
+<select id="logisticsIn" parameterType="pink.supply.model.MemberVO" resultType="pink.supply.model.MemberVO">
+SELECT * 
+FROM 
+	member
+WHERE 
+	email = #{email}
+</select>
 
 </mapper>

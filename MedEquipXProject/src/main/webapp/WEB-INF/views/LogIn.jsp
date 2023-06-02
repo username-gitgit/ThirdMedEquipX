@@ -42,7 +42,7 @@
 					<div class="row gx-5 justify-content-center">
 						<div
 							class="card shadow rounded-4 border-0 col-sm-8 col-md-6 col-lg-5 p-4">
-							<form action="memberIn" method="post">
+							<form action="logisticsIn" method="post">
 								<div class="text-left pb-3">
 									<h1 class="display-5 fw-bolder mb-2 fs-1">
 										<span class="d-inline LogoGradient-text fs-2">회원 로그인</span><br>

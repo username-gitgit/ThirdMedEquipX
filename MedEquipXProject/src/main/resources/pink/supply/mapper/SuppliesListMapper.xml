@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="pink.supply.mapper.SuppliesListMapper">
+
+<select id="callSupplyList" parameterType="pink.supply.model.SuppliesListVO" resultType="pink.supply.model.SuppliesListVO">
+SELECT 
+	name
+	, specifications
+	, manufacturer
+	, category
+	, subcategory
+	, change_date
+	, in_charge
+	, stock
+	, turnover_rate
+FROM
+	medical_supplies
+WHERE
+	visible = 'Y'
+
+</select>
+
+</mapper>

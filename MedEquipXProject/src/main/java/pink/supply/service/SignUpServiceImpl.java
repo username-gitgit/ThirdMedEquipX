@@ -3,19 +3,18 @@ package pink.supply.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import pink.supply.mapper.LoginMapper;
+import pink.supply.mapper.SignUpMapper;
 import pink.supply.model.MemberVO;
 
 @Service
-public class LoginServiceImpl implements LoginService {
+public class SignUpServiceImpl implements SignUpService {
 	
 	@Autowired
-	LoginMapper logMap;
-	
+	SignUpMapper signMap;
 
 	@Override
-	public MemberVO logisticsIn(MemberVO member) {
-		return logMap.logisticsIn(member);
+	public void logisticsJoin(MemberVO member) {
+		signMap.logisticsJoin(member);
 	}
 
 }

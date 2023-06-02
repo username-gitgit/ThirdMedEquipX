@@ -40,7 +40,7 @@
 			<div class="row gx-5 justify-content-center">
 				<div
 					class="card shadow rounded-4 border-0 col-sm-8 col-md-6 col-lg-5 px-4 pt-4 pb-1 mb-5">
-					<form id="needs-validation" action="memberJoin" method="post"
+					<form id="needs-validation" action="SignUp" method="post"
 						novalidate>
 						<div class="text-left mb-4">
 							<h1 class="fw-bolder">
@@ -58,14 +58,14 @@
 						<div class="Sans form-floating text-muted mb-3 is-invalid">
 							<input class="form-control" name="password" id="password"
 								placeholder="비밀번호" type="password" required
-								pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+								pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$"
 								onchange="validatePassword()" />
 							<!-- pattern="^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}" -->
-							<label for="password">비밀번호 (영문 숫자 특수문자 조합, 8자리 이상)</label>
+							<label for="password">비밀번호 (영문 숫자 특수문자 조합, 6자리 이상)</label>
 							<!-- <span
 								style="color: #dc3545; font-size: 0.9rem;" id="msgPassword"></span> -->
 							<div class="valid-feedback">좋아요!</div>
-							<div class="invalid-feedback">영문자, 숫자, 특수기호 조합으로 8자 이상
+							<div class="invalid-feedback">영문자, 숫자, 특수기호 조합으로 6자 이상
 								입력하세요.</div>
 						</div>
 
@@ -87,27 +87,6 @@
 								onkeyup="validateName()"> <label for="name">이름</label>
 							<div class="valid-feedback">좋아요!</div>
 							<div class="invalid-feedback">한글 2~5자 이내로 입력하세요.</div>
-						</div>
-
-						<!-- 5. 주민등록번호 -->
-						<div class="Sans form-floating text-muted mb-3 is-invalid">
-							<input class="form-control" name="residentid" id="residentid"
-								placeholder="주민등록번호" type="text" required
-								pattern="\d{6}[1-4]\d{6}" onkeyup="validateResidentid()" /> <label
-								for="residentid">주민등록번호 (숫자만 입력)</label>
-							<div class="valid-feedback">좋아요!</div>
-							<div class="invalid-feedback">특수 문자를 제외한 숫자로만 입력해 주세요.</div>
-						</div>
-
-						<!-- 6. 전화번호 -->
-						<div class="Sans form-floating text-muted mb-3 is-invalid">
-							<input class="form-control" name="phone" id="phone"
-								placeholder="전화번호" type="text" required
-								pattern="^\d{3}?\d{3,4}?\d{4}$" onkeyup="validatePhone()" />
-							<!-- pattern="01([0|1|6|7|8|9]?)?([0-9]{3,4})?([0-9]{4})$" -->
-							<label for="phone">휴대폰 번호 (숫자만 입력)</label>
-							<div class="valid-feedback">좋아요!</div>
-							<div class="invalid-feedback">특수 문자를 제외한 숫자로만 입력해 주세요.</div>
 						</div>
 						<!-- Submit Button-->
 						<div class="Sans text-center pt-2 mb-4">
