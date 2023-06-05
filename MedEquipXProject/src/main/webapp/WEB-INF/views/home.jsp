@@ -11,7 +11,6 @@
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
 
 아아아
 안녕 한글 깨지니?
@@ -19,10 +18,14 @@
 <a href="SignUp">SignUp page</a>
 <a href="dashboard">dashboard page</a>
 <br>
+orderHistory
+<a href="orderHistory">orderHistory page</a>
 업로드
-<input type="file" id="myFileInput" onchange="handleFileSelect(event)">
-<div id="preview"></div>
-
+	<form action="uploadForm" method="post" enctype="multipart/form-data">
+		<input type="file" id="myFileInput" onchange="handleFileSelect(event)">
+		<div id="preview"></div>
+		<input type="submit" value="파일전송">
+	</form>
 <script>
   function handleFileSelect(event) {
     const file = event.target.files[0]; // 선택한 파일 가져오기

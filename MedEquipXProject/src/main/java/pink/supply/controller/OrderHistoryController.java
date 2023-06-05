@@ -17,10 +17,10 @@ public class OrderHistoryController {
 	@Autowired
 	OrderHistoryService orderServ;
 	
-	@GetMapping("/orderHistory")
+	@GetMapping("orderHistory")
 	public String orderhistory(OrderHistoryVO ordHistory, Model model) {
 		model.addAttribute("historyCall", orderServ.callOrderHistory(ordHistory));
-		return "/orderHistory";
+		return "orderHistory";
 	}
 
 }
