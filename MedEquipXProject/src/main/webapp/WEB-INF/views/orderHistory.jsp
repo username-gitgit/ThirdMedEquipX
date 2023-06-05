@@ -1,6 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -14,8 +20,6 @@
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon"
 	href="resources/images/hospital.png" />
-<!-- <link rel="shortcut icon" type="image/x-icon"
-	href="resources/assets/img/favicon.png"> -->
 
 <link rel="stylesheet" href="resources/assets/css/bootstrap.min.css">
 
@@ -38,6 +42,8 @@
 	<div id="global-loader">
 		<div class="whirly-loader"></div>
 	</div>
+
+	<!-- header -->
 	<div class="main-wrapper">
 		<div class="header">
 			<div class="header-left active">
@@ -86,6 +92,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- navigation -->
 		<div class="sidebar" id="sidebar">
 			<div class="sidebar-inner slimscroll">
 				<div id="sidebar-menu" class="sidebar-menu">
@@ -108,21 +115,14 @@
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="main-wrapper">
+		<!-- Contents -->
 		<div class="page-wrapper">
 			<div class="content">
 				<div class="page-header">
 					<div class="page-title">
 						<h4>출고 내역</h4>
-						<!-- <h6>Manage your products</h6> -->
 					</div>
-					<!-- <div class="page-btn">
-						<a href="addproduct.html" class="btn btn-added"><img
-							src="resources/assets/img/icons/plus.svg" alt="img" class="me-1">Add
-							New Product</a>
-					</div> -->
 				</div>
 
 				<div class="card">
@@ -140,19 +140,6 @@
 										src="resources/assets/img/icons/search-white.svg" alt="img"></a>
 								</div>
 							</div>
-							<!-- <div class="wordset">
-								<ul>
-									<li><a data-bs-toggle="tooltip" data-bs-placement="top"
-										title="pdf"><img src="resources/assets/img/icons/pdf.svg" alt="img"></a>
-									</li>
-									<li><a data-bs-toggle="tooltip" data-bs-placement="top"
-										title="excel"><img src="resources/assets/img/icons/excel.svg"
-											alt="img"></a></li>
-									<li><a data-bs-toggle="tooltip" data-bs-placement="top"
-										title="print"><img src="resources/assets/img/icons/printer.svg"
-											alt="img"></a></li>
-								</ul>
-							</div> -->
 						</div>
 
 						<div class="card mb-0" id="filter_inputs">
@@ -160,15 +147,6 @@
 								<div class="row">
 									<div class="col-lg-12 col-sm-12">
 										<div class="row">
-											<!--<div class="col-lg col-sm-6 col-12">
- 												<div class="form-group">
-													<select class="select">
-														<option>제품명을 선택하세요.</option>
-														<option>Macbook pro</option>
-														<option>Orange</option>
-													</select>
-												</div>
-											</div> -->
 											<div class="col-lg col-sm-6 col-12">
 												<div class="form-group">
 													<select class="select">
@@ -178,30 +156,6 @@
 													</select>
 												</div>
 											</div>
-											<!-- <div class="col-lg col-sm-6 col-12">
-												<div class="form-group">
-													<select class="select">
-														<option>Choose Sub Category</option>
-														<option>Computer</option>
-													</select>
-												</div>
-											</div> -->
-											<!-- <div class="col-lg col-sm-6 col-12">
-												<div class="form-group">
-													<select class="select">
-														<option>제조사를 선택하세요.</option>
-														<option>N/D</option>
-													</select>
-												</div>
-											</div> -->
-											<!-- <div class="col-lg col-sm-6 col-12 ">
-												<div class="form-group">
-													<select class="select">
-														<option>Price</option>
-														<option>150.00</option>
-													</select>
-												</div>
-											</div> -->
 											<div class="col-lg-1 col-sm-6 col-12">
 												<div class="form-group">
 													<a class="btn btn-filters ms-auto"><img
@@ -219,26 +173,32 @@
 							<table class="table  datanew">
 								<thead>
 									<tr>
-										<!-- 										<th><label class="checkboxs"> <input
-												type="checkbox" id="select-all"> <span
-												class="checkmarks"></span>
-										</label></th> -->
 										<th>상품명</th>
 										<th>규격</th>
 										<th>사용처</th>
 										<th>출고 수량</th>
-										<!-- <th>분류</th> -->
 										<th>출고 시간</th>
-										<!-- <th>단위</th> -->
 										<th>승인한 관리자</th>
 										<th>비고</th>
 									</tr>
 								</thead>
 								<tbody>
+									<c:forEach items="${historyCall}" var="historyCall">
+										<tr>
+											<td class="productimgname"><a href="javascript:void(0);"
+												class="product-img"> <img
+													src="resources/assets/img/product/product1.jpg"
+													alt="product">
+											</a> <a href="javascript:void(0);">${historyCall.name}</a></td>
+											<td>${historyCall.specifications}</td>
+											<td>${historyCall.department}</td>
+											<td>${historyCall.quantity}</td>
+											<td>${historyCall.change_date}</td>
+											<td>${historyCall.in_charge}</td>
+											<td>${historyCall.memo}</td>
+										</tr>
+									</c:forEach>
 									<tr>
-										<!-- <td><label class="checkboxs"> <input
-												type="checkbox"> <span class="checkmarks"></span>
-										</label></td> -->
 										<td class="productimgname"><a href="javascript:void(0);"
 											class="product-img"> <img
 												src="resources/assets/img/product/product1.jpg"
@@ -247,23 +207,11 @@
 										<td>PT001</td>
 										<td>N/D</td>
 										<td>100.00</td>
-										<!-- <td>Computers</td> -->
 										<td>2023.06.01 16:11</td>
-										<!-- <td>pc</td> -->
 										<td>Admin</td>
 										<td>Memo</td>
-										<!-- <td><a class="me-3" href="product-details.html"> <img
-												src="resources/assets/img/icons/eye.svg" alt="img">
-										</a> <a class="me-3" href="editproduct.html"> <img
-												src="resources/assets/img/icons/edit.svg" alt="img">
-										</a> <a class="confirm-text" href="javascript:void(0);"> <img
-												src="resources/assets/img/icons/delete.svg" alt="img">
-										</a></td> -->
 									</tr>
 									<tr>
-										<!-- <td><label class="checkboxs"> <input
-												type="checkbox"> <span class="checkmarks"></span>
-										</label></td> -->
 										<td class="productimgname"><a href="javascript:void(0);"
 											class="product-img"> <img
 												src="resources/assets/img/product/product2.jpg"
@@ -272,23 +220,11 @@
 										<td>PT002</td>
 										<td>N/D</td>
 										<td>100.00</td>
-										<!-- <td>Fruits</td> -->
 										<td>2023.06.01 16:11</td>
-										<!-- <td>pc</td> -->
 										<td>Admin</td>
 										<td>Memo</td>
-										<!-- <td><a class="me-3" href="product-details.html"> <img
-												src="resources/assets/img/icons/eye.svg" alt="img">
-										</a> <a class="me-3" href="editproduct.html"> <img
-												src="resources/assets/img/icons/edit.svg" alt="img">
-										</a> <a class="confirm-text" href="javascript:void(0);"> <img
-												src="resources/assets/img/icons/delete.svg" alt="img">
-										</a></td> -->
 									</tr>
 									<tr>
-										<!-- <td><label class="checkboxs"> <input
-												type="checkbox"> <span class="checkmarks"></span>
-										</label></td> -->
 										<td class="productimgname"><a href="javascript:void(0);"
 											class="product-img"> <img
 												src="resources/assets/img/product/product3.jpg"
@@ -297,23 +233,11 @@
 										<td>PT003</td>
 										<td>N/D</td>
 										<td>100.00</td>
-										<!-- <td>Fruits</td> -->
 										<td>2023.06.01 16:11</td>
-										<!-- <td>pc</td> -->
 										<td>Admin</td>
 										<td>Memo</td>
-										<!-- <td><a class="me-3" href="product-details.html"> <img
-												src="resources/assets/img/icons/eye.svg" alt="img">
-										</a> <a class="me-3" href="editproduct.html"> <img
-												src="resources/assets/img/icons/edit.svg" alt="img">
-										</a> <a class="confirm-text" href="javascript:void(0);"> <img
-												src="resources/assets/img/icons/delete.svg" alt="img">
-										</a></td> -->
 									</tr>
 									<tr>
-										<!-- <td><label class="checkboxs"> <input
-												type="checkbox"> <span class="checkmarks"></span>
-										</label></td> -->
 										<td class="productimgname"><a href="javascript:void(0);"
 											class="product-img"> <img
 												src="resources/assets/img/product/product4.jpg"
@@ -322,23 +246,11 @@
 										<td>PT004</td>
 										<td>N/D</td>
 										<td>100.00</td>
-										<!-- <td>Fruits</td> -->
 										<td>2023.06.01 16:11</td>
-										<!-- <td>pc</td> -->
 										<td>Admin</td>
 										<td>Memo</td>
-										<!-- <td><a class="me-3" href="product-details.html"> <img
-												src="resources/assets/img/icons/eye.svg" alt="img">
-										</a> <a class="me-3" href="editproduct.html"> <img
-												src="resources/assets/img/icons/edit.svg" alt="img">
-										</a> <a class="confirm-text" href="javascript:void(0);"> <img
-												src="resources/assets/img/icons/delete.svg" alt="img">
-										</a></td> -->
 									</tr>
 									<tr>
-										<!-- <td><label class="checkboxs"> <input
-												type="checkbox"> <span class="checkmarks"></span>
-										</label></td> -->
 										<td class="productimgname"><a href="javascript:void(0);"
 											class="product-img"> <img
 												src="resources/assets/img/product/product5.jpg"
@@ -347,23 +259,11 @@
 										<td>PT005</td>
 										<td>N/D</td>
 										<td>150.00</td>
-										<!-- <td>Accessories</td> -->
 										<td>2023.06.01 16:11</td>
-										<!-- <td>pc</td> -->
 										<td>Admin</td>
 										<td>Memo</td>
-										<!-- <td><a class="me-3" href="product-details.html"> <img
-												src="resources/assets/img/icons/eye.svg" alt="img">
-										</a> <a class="me-3" href="editproduct.html"> <img
-												src="resources/assets/img/icons/edit.svg" alt="img">
-										</a> <a class="confirm-text" href="javascript:void(0);"> <img
-												src="resources/assets/img/icons/delete.svg" alt="img">
-										</a></td> -->
 									</tr>
 									<tr>
-										<!-- <td><label class="checkboxs"> <input
-												type="checkbox"> <span class="checkmarks"></span>
-										</label></td> -->
 										<td class="productimgname"><a href="javascript:void(0);"
 											class="product-img"> <img
 												src="resources/assets/img/product/product6.jpg"
@@ -372,23 +272,11 @@
 										<td>PT006</td>
 										<td>N/D</td>
 										<td>100.00</td>
-										<!-- <td>Shoes</td> -->
 										<td>2023.06.01 16:11</td>
-										<!-- <td>pc</td> -->
 										<td>Admin</td>
 										<td>Memo</td>
-										<!-- <td><a class="me-3" href="product-details.html"> <img
-												src="resources/assets/img/icons/eye.svg" alt="img">
-										</a> <a class="me-3" href="editproduct.html"> <img
-												src="resources/assets/img/icons/edit.svg" alt="img">
-										</a> <a class="confirm-text" href="javascript:void(0);"> <img
-												src="resources/assets/img/icons/delete.svg" alt="img">
-										</a></td> -->
 									</tr>
 									<tr>
-										<!-- <td><label class="checkboxs"> <input
-												type="checkbox"> <span class="checkmarks"></span>
-										</label></td> -->
 										<td class="productimgname"><a href="javascript:void(0);"
 											class="product-img"> <img
 												src="resources/assets/img/product/product7.jpg"
@@ -397,23 +285,11 @@
 										<td>PT007</td>
 										<td>N/D</td>
 										<td>100.00</td>
-										<!-- <td>Shoes</td> -->
 										<td>2023.06.01 16:11</td>
-										<!-- <td>pc</td> -->
 										<td>Admin</td>
 										<td>Memo</td>
-										<!-- <td><a class="me-3" href="product-details.html"> <img
-												src="resources/assets/img/icons/eye.svg" alt="img">
-										</a> <a class="me-3" href="editproduct.html"> <img
-												src="resources/assets/img/icons/edit.svg" alt="img">
-										</a> <a class="confirm-text" href="javascript:void(0);"> <img
-												src="resources/assets/img/icons/delete.svg" alt="img">
-										</a></td> -->
 									</tr>
 									<tr>
-										<!-- <td><label class="checkboxs"> <input
-												type="checkbox"> <span class="checkmarks"></span>
-										</label></td> -->
 										<td class="productimgname"><a href="javascript:void(0);"
 											class="product-img"> <img
 												src="resources/assets/img/product/product8.jpg"
@@ -422,23 +298,11 @@
 										<td>PT008</td>
 										<td>N/D</td>
 										<td>100.00</td>
-										<!-- <td>Fruits</td> -->
 										<td>2023.06.01 16:11</td>
-										<!-- <td>pc</td> -->
 										<td>Admin</td>
 										<td>Memo</td>
-										<!-- <td><a class="me-3" href="product-details.html"> <img
-												src="resources/assets/img/icons/eye.svg" alt="img">
-										</a> <a class="me-3" href="editproduct.html"> <img
-												src="resources/assets/img/icons/edit.svg" alt="img">
-										</a> <a class="confirm-text" href="javascript:void(0);"> <img
-												src="resources/assets/img/icons/delete.svg" alt="img">
-										</a></td> -->
 									</tr>
 									<tr>
-										<!-- <td><label class="checkboxs"> <input
-												type="checkbox"> <span class="checkmarks"></span>
-										</label></td> -->
 										<td class="productimgname"><a href="javascript:void(0);"
 											class="product-img"> <img
 												src="resources/assets/img/product/product9.jpg"
@@ -447,23 +311,11 @@
 										<td>PT009</td>
 										<td>N/D</td>
 										<td>100.00</td>
-										<!-- <td>Earphones</td> -->
 										<td>2023.06.01 16:11</td>
-										<!-- <td>pc</td> -->
 										<td>Admin</td>
 										<td>Memo</td>
-										<!-- <td><a class="me-3" href="product-details.html"> <img
-												src="resources/assets/img/icons/eye.svg" alt="img">
-										</a> <a class="me-3" href="editproduct.html"> <img
-												src="resources/assets/img/icons/edit.svg" alt="img">
-										</a> <a class="confirm-text" href="javascript:void(0);"> <img
-												src="resources/assets/img/icons/delete.svg" alt="img">
-										</a></td> -->
 									</tr>
 									<tr>
-										<!-- <td><label class="checkboxs"> <input
-												type="checkbox"> <span class="checkmarks"></span>
-										</label></td> -->
 										<td class="productimgname"><a href="javascript:void(0);"
 											class="product-img"> <img
 												src="resources/assets/img/product/product11.jpg"
@@ -472,23 +324,11 @@
 										<td>PT0010</td>
 										<td>N/D</td>
 										<td>100.00</td>
-										<!-- <td>Health Care</td> -->
 										<td>2023.06.01 16:11</td>
-										<!-- <td>kg</td> -->
 										<td>Admin</td>
 										<td>Memo</td>
-										<!-- <td><a class="me-3" href="product-details.html"> <img
-												src="resources/assets/img/icons/eye.svg" alt="img">
-										</a> <a class="me-3" href="editproduct.html"> <img
-												src="resources/assets/img/icons/edit.svg" alt="img">
-										</a> <a class="confirm-text" href="javascript:void(0);"> <img
-												src="resources/assets/img/icons/delete.svg" alt="img">
-										</a></td> -->
 									</tr>
 									<tr>
-										<!-- <td><label class="checkboxs"> <input
-												type="checkbox"> <span class="checkmarks"></span>
-										</label></td> -->
 										<td class="productimgname"><a href="javascript:void(0);"
 											class="product-img"> <img
 												src="resources/assets/img/product/product17.jpg"
@@ -497,18 +337,9 @@
 										<td>PT0011</td>
 										<td>N/D</td>
 										<td>100.00</td>
-										<!-- <td>Health Care</td> -->
 										<td>2023.06.01 16:11</td>
-										<!-- <td>kg</td> -->
 										<td>Admin</td>
 										<td>Memo</td>
-										<!-- <td><a class="me-3" href="product-details.html"> <img
-												src="resources/assets/img/icons/eye.svg" alt="img">
-										</a> <a class="me-3" href="editproduct.html"> <img
-												src="resources/assets/img/icons/edit.svg" alt="img">
-										</a> <a class="confirm-text" href="javascript:void(0);"> <img
-												src="resources/assets/img/icons/delete.svg" alt="img">
-										</a></td> -->
 									</tr>
 								</tbody>
 							</table>
@@ -519,7 +350,6 @@
 			</div>
 		</div>
 	</div>
-
 
 	<script src="resources/assets/js/jquery-3.6.0.min.js"></script>
 
