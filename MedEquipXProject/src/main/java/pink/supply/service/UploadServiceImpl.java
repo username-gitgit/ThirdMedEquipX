@@ -14,7 +14,7 @@ public class UploadServiceImpl implements UploadService {
 
 	@Override
 	public void imgInsert(AttachVO attach) {
-		
+		upLoadMap.imgInsert(attach);
 	}
 
 }

@@ -22,7 +22,7 @@ orderHistory
 <a href="orderHistory">orderHistory page</a>
 업로드
 	<form action="uploadForm" method="post" enctype="multipart/form-data">
-		<input type="file" id="myFileInput" onchange="handleFileSelect(event)">
+		<input type="file" name="file" id="myFileInput" onchange="handleFileSelect(event)">
 		<div id="preview"></div>
 		<input type="submit" value="파일전송">
 	</form>

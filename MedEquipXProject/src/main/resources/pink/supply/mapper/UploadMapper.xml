@@ -13,8 +13,8 @@
 	VALUES
 		(
 		#{uuid}
-		, #{uploadPath}
-		, #{fileName}
+		, #{uploadpath}
+		, #{filename}
 		)
 </insert>
 
