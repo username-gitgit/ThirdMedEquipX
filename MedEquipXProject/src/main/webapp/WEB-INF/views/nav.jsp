@@ -30,7 +30,9 @@
 <link href="resources/css/styles.css" rel="stylesheet" />
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-
+<%
+	String member = (String) session.getAttribute("member");
+%>
 <!-- Navigation-->
 <div class="main-wrapper">
 	<div class="header">
@@ -59,8 +61,10 @@
 								src="resources/assets/img/profiles/kuromi.jpg" alt=""> <span
 								class="status online"></span></span>
 							<div class="profilesets">
-								<h6>쿠로미</h6>
-								<h5>Admin</h5>
+							<c:if test=${not empty member}>
+								<h6>${getName.name}</h6>
+								<h5>Manager</h5>
+							</c:if>
 							</div>
 						</div>
 						<hr class="m-0">
