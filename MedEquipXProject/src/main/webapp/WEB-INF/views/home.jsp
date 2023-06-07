@@ -18,7 +18,7 @@
 <a href="SignUp">SignUp page</a>
 <a href="dashboard">dashboard page</a>
 <br>
-orderHistory
+<a href="itemDetails">itemDetails page</a>
 <a href="orderHistory">orderHistory page</a>
 업로드
 	<form action="uploadForm" method="post" enctype="multipart/form-data">

@@ -14,8 +14,8 @@ public class ItemDetailsServiceImpl implements ItemDetailsService{
 	@Autowired
 	ItemDetailsMapper itemMap;
 	
-	public ArrayList<ItemDetailsVO> callItemDetails(ItemDetailsVO itDetails){
-		return itemMap.callItemDetails(itDetails);
+	public ArrayList<ItemDetailsVO> callItemDetails(ItemDetailsVO itemDetails){
+		return itemMap.callItemDetails(itemDetails);
 	}
 
 }

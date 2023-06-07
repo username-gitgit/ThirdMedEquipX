@@ -156,12 +156,12 @@
 										<h4>macbookpro.jpg</h4>
 										<h6>581kb</h6>
 									</div>
-									<div class="slider-product">
+									<!-- <div class="slider-product">
 										<img src="resources/assets/img/product/product69.jpg"
 											alt="img">
 										<h4>macbookpro.jpg</h4>
 										<h6>581kb</h6>
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>

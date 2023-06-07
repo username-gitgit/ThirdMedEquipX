@@ -112,7 +112,9 @@
 											class="product-img"> <img
 												src="resources/assets/img/product/product1.jpg"
 												alt="product">
-										</a> --> <a href="javascript:void(0);"> ${listCall.name}</a></td>
+										</a> --> 
+										<a href="/itemDetails/${listCall.name}">${listCall.name}</a></td>
+										<%-- <a href="javascript:itemDetails('${itemCall.name}');"> ${listCall.name}</a></td> --%>
 										<td>${listCall.specifications}</td>
 										<td>${listCall.manufacturer}</td>
 										<td>${listCall.category}</td>

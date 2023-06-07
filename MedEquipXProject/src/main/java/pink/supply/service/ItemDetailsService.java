@@ -6,6 +6,6 @@ import pink.supply.model.ItemDetailsVO;
 
 public interface ItemDetailsService {
 	
-	public ArrayList<ItemDetailsVO> callItemDetails(ItemDetailsVO itDetails);
+	public ArrayList<ItemDetailsVO> callItemDetails(ItemDetailsVO itemDetails);
 	
 }
