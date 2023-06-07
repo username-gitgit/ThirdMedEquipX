@@ -71,31 +71,31 @@
 								<ul class="product-bar">
 									<li>
 										<h4 class="fw-bold">물품명</h4>
-										<h6>${itemCall.name}</h6>
+										<h6>${itemDetails.name}</h6>
 									</li>
 									<li>
 										<h4 class="fw-bold">분류</h4>
-										<h6>${itemCall.category}</h6>
+										<h6>${itemDetails.category}</h6>
 									</li>
 									<li>
 										<h4 class="fw-bold">규격</h4>
-										<h6>${itemCall.specifications}</h6>
+										<h6>${itemDetails.specifications}</h6>
 									</li>
 									<li>
 										<h4 class="fw-bold">마지막 변경일</h4>
-										<h6>${itemCall.change_date}</h6>
+										<h6>${itemDetails.change_date}</h6>
 									</li>
 									<li>
 										<h4 class="fw-bold">수정한 관리자</h4>
-										<h6>${itemCall.in_charge}</h6>
+										<h6>${itemDetails.in_charge}</h6>
 									</li>
 									<li>
 										<h4 class="fw-bold">현재고</h4>
-										<h6>${itemCall.stock}</h6>
+										<h6>${itemDetails.stock}</h6>
 									</li>
 									<li>
 										<h4 class="fw-bold">1개월 평균 회전</h4>
-										<h6>${itemCall.turnover_rate}</h6>
+										<h6>${itemDetails.turnover_rate}</h6>
 									</li>
 									<!-- <li>
 											<h4 class="fw-bold">물품명</h4>
