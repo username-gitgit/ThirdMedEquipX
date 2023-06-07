@@ -29,6 +29,22 @@
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="resources/css/styles.css" rel="stylesheet" />
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="shortcut icon" type="image/x-icon"
+	href="resources/assets/img/favicon.png">
+
+<link rel="stylesheet" href="resources/assets/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="resources/assets/css/animate.css">
+
+<link rel="stylesheet" href="resources/assets/plugins/select2/css/select2.min.css">
+
+<link rel="stylesheet" href="resources/assets/css/dataTables.bootstrap4.min.css">
+
+<link rel="stylesheet"
+	href="resources/assets/plugins/fontawesome/css/fontawesome.min.css">
+<link rel="stylesheet" href="resources/assets/plugins/fontawesome/css/all.min.css">
+
+<link rel="stylesheet" href="resources/assets/css/style.css">
 </head>
 <%
 	String member = (String) session.getAttribute("member");

@@ -107,7 +107,7 @@
 								src="resources/assets/img/icons/purchase1.svg" alt="img"><span>
 									신규 제품 등록</span> </a></li>
 						<li class="submenu"><a href="javascript:void(0);"><i
-								data-feather="alert-octagon"></i> <span> 재고 부족 </span> </a></li>
+								data-feather="alert-octagon"></i> <span> 안전 재고 </span> </a></li>
 					</ul>
 				</div>
 			</div>

@@ -43,9 +43,9 @@ public class LoginController {
 			encodePw = memData.getPassword();
 			logger.info("encodePw is {}.", encodePw);
 			if (true == bpassencode.matches(clearPw, encodePw)) {
-				memData.setPassword("");
-				model.addAttribute("getName", memData);
+				memData.setPassword("");				
                 session.setAttribute("member", memData);
+                model.addAttribute("getName", memData);
 				return "home";
             } else {//비번 틀렷을때
                 return "/login";
