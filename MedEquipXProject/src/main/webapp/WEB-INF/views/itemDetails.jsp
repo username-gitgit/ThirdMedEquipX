@@ -46,7 +46,6 @@
 	<div id="global-loader">
 		<div class="whirly-loader"></div>
 	</div>
-
 	<!-- Contents -->
 	<div class="page-wrapper">
 		<div class="content">

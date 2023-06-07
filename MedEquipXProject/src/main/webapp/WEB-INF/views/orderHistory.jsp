@@ -44,7 +44,6 @@
 	<div id="global-loader">
 		<div class="whirly-loader"></div>
 	</div>
-
 	<!-- Contents -->
 	<div class="page-wrapper">
 		<div class="content">
@@ -53,7 +52,6 @@
 					<h4>출고 내역</h4>
 				</div>
 			</div>
-
 			<div class="card">
 				<div class="card-body">
 					<div class="table-top">
@@ -70,7 +68,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="card mb-0" id="filter_inputs">
 						<div class="card-body pb-0">
 							<div class="row">
@@ -97,7 +94,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="table-responsive">
 						<table class="table  datanew">
 							<thead>
@@ -132,7 +128,6 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 	</div>

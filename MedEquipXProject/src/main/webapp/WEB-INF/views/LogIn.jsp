@@ -66,7 +66,6 @@
 	<div id="global-loader">
 		<div class="whirly-loader"></div>
 	</div>
-
 	<!-- Contents -->
 	<section>
 		<div data-aos="fade-down" data-aos-easing="linear"
