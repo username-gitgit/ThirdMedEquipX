@@ -108,11 +108,11 @@
 							<tbody>
 								<c:forEach items="${listCall}" var="listCall">
 									<tr>
-										<td class="productimgname"><!-- <a href="javascript:void(0);"
+										<td class="productimgname"> <!-- <a href="javascript:void(0);"
 											class="product-img"> <img
 												src="resources/assets/img/product/product1.jpg"
 												alt="product">
-										</a> <a href="javascript:void(0);"> -->${listCall.name}</a></td>
+										</a> --> <a href="javascript:void(0);"> ${listCall.name}</a></td>
 										<td>${listCall.specifications}</td>
 										<td>${listCall.manufacturer}</td>
 										<td>${listCall.category}</td>
