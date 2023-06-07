@@ -2,13 +2,13 @@ package pink.supply.model;
 
 public class OrderHistoryVO {
 	
-	private String name;
-	private String specifications;
-	private String department;
-	private int quantity;
-	private String change_date;
-	private String in_charge;
-	private String memo;
+	private String name; //상품명
+	private String specifications; //규격
+	private String department; //사용처
+	private int quantity; //출고 수량
+	private String change_date; //출고 시간
+	private String in_charge; //승인한 관리자
+	private String memo; //비고 
 	
 	
 	public String getName() {
@@ -58,6 +58,4 @@ public class OrderHistoryVO {
 		return "OrderHistoryVO [name=" + name + ", specifications=" + specifications + ", department=" + department + 
 				", quantity=" + quantity + ", change_date=" + change_date + ", in_charge=" + in_charge + ", memo=" + memo + "]";
 	}
-	
-	
 }

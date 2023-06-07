@@ -77,7 +77,7 @@
 								src="resources/assets/img/profiles/kuromi.jpg" alt=""> <span
 								class="status online"></span></span>
 							<div class="profilesets">
-							<c:if test=${not empty member}>
+							<c:if test="${not empty member}">
 								<h6>${getName.name}</h6>
 								<h5>Manager</h5>
 							</c:if>
