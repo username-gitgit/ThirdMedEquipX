@@ -97,34 +97,6 @@
 										<h4 class="fw-bold">1개월 평균 회전</h4>
 										<h6>${itemDetails.turnover_rate}</h6>
 									</li>
-									<!-- <li>
-											<h4 class="fw-bold">물품명</h4>
-											<h6>Macbook pro</h6>
-										</li>
-										<li>
-											<h4 class="fw-bold">분류</h4>
-											<h6>Computers</h6>
-										</li>
-										<li>
-											<h4 class="fw-bold">규격</h4>
-											<h6>PT0001</h6>
-										</li>
-										<li>
-											<h4 class="fw-bold">마지막 변경일</h4>
-											<h6>2023-06-02 11:03</h6>
-										</li>
-										<li>
-											<h4 class="fw-bold">수정한 관리자</h4>
-											<h6>시나모롤</h6>
-										</li>
-										<li>
-											<h4 class="fw-bold">현재고</h4>
-											<h6>100</h6>
-										</li>
-										<li>
-											<h4 class="fw-bold">1개월 평균 회전</h4>
-											<h6>1.8</h6>
-										</li> -->
 								</ul>
 								<br>
 								<div class="col-lg-12 text-center">

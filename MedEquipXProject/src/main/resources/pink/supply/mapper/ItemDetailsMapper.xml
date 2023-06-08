@@ -3,9 +3,9 @@
 
 <mapper namespace="pink.supply.mapper.ItemDetailsMapper">
 
-<select id="callItemDetails" parameterType="pink.supply.model.ItemDetailsVO" resultType="pink.supply.model.ItemDetailsVO">
+<select id="getItemDetailsByName" parameterType="pink.supply.model.ItemDetailsVO" resultType="pink.supply.model.ItemDetailsVO">
 SELECT
-	name
+	NAME
 	, specifications
 	, category
 	, change_date
@@ -15,6 +15,6 @@ SELECT
 FROM
 	medical_supplies AS m
 WHERE
-	m.name = "#{name}" AND visible = 'Y' 
+	m.NAME = #{name} AND visible = 'Y' 
 </select>
 </mapper>	
