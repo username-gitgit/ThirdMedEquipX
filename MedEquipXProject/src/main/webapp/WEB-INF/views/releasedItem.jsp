@@ -42,58 +42,50 @@
 				<div class="col-lg-8 col-sm-12">
 					<div class="col-lg-8 card shadow rounded-4 border-0">
 						<div class="card-body">
-
+						<form action="releasedItem" method="post">
 							<div class="page-header">
 								<div class="page-title">
 									<h4 class="fs-3">출고 내역</h4>
-									<!-- <h6>Full details of a product</h6> -->
 								</div>
 							</div>
 								<div class="col-lg-12 col-sm-6 col-12">
 									<div class="form-group">
-										<label>칼럼1</label> <input type="text" class="inputStyle">
+										<label>출고 부서</label> <input name="Department" type="text" class="inputStyle">
 									</div>
 								</div>
 								<br>
 								<div class="col-lg-12 col-sm-6 col-12">
 									<div class="form-group">
-										<label>칼럼2</label> <input type="text" class="inputStyle">
+										<label>물품명</label> <input name="name" type="text" class="inputStyle">
 									</div>
 								</div>
 								<br>
 								<div class="col-lg-12 col-sm-6 col-12">
 									<div class="form-group">
-										<label>칼럼3</label> <input type="text" class="inputStyle">
+										<label>규격</label> <input name="specifications" type="text" class="inputStyle">
 									</div>
 								</div>
 								<br>
 								<div class="col-lg-12 col-sm-6 col-12">
 									<div class="form-group">
-										<label>칼럼4</label> <input type="text" class="inputStyle">
+										<label>수량</label> <input name="quantity" type="text" class="inputStyle">
 									</div>
 								</div>
 								<br>
+								<div class="col-lg-12 col-sm-6 col-12">
+									<div class="form-group">
+										<label>비고</label> <input name="memo" type="text" class="inputStyle">
+									</div>
+								</div>
+								<br>
+								<div class="col-lg-12 text-center">
+								<button type="submit" class="btn btn-submit fs-5 fw-bolder d-inline-block col-12">출고하기</button>
 							</div>
-							<!-- <div class="col-lg-12">
-								<div class="form-group">
-									<label> 제품 사진</label>
-									<div class="image-upload">
-										<input type="file">
-										<div class="image-uploads">
-											<img src="resources/resources/assets/img/icons/upload.svg" alt="img">
-											<h4>사진 등록하기</h4>
-										</div>
-									</div>
-								</div>
-							</div> -->
-							<div class="col-lg-12 text-center">
-								<a href="javascript:void(0);" class="btn btn-submit fs-5 fw-bolder d-inline-block col-12">등록하기</a>
-								<!-- <a href="productlist.html" class="btn btn-cancel">Cancel</a> -->
+								</form>
 							</div>
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>

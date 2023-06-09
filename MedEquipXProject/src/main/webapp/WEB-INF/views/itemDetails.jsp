@@ -20,27 +20,9 @@
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon"
 	href="resources/images/hospital.png" />
-<!-- <link rel="shortcut icon" type="image/x-icon"
-	href="assets/img/favicon.png"> -->
-<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-<link rel="stylesheet" href="assets/css/animate.css">
-
-<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
-
-<link rel="stylesheet"
-	href="assets/plugins/owlcarousel/owl.carousel.min.css">
-
-<link rel="stylesheet" href="assets/css/dataTables.bootstrap4.min.css">
-
-<link rel="stylesheet"
-	href="assets/plugins/fontawesome/css/fontawesome.min.css">
-<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-
-<link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 <!-- Navigation-->
+
 <jsp:include page="nav.jsp" flush="false" />
 <body>
 	<div id="global-loader">
@@ -53,7 +35,6 @@
 				<div class="col-lg-8 col-sm-12">
 					<div class="col-lg-8 card shadow rounded-4 border-0">
 						<div class="card-body">
-
 							<div class="page-header">
 								<div class="page-title">
 									<h4 class="fs-3">물품 상세 정보</h4>

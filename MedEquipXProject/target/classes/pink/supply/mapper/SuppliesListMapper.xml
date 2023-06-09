@@ -21,4 +21,40 @@ WHERE
 
 </select>
 
+<update id="ForwardingDept" parameterType="pink.supply.model.SuppliesListVO">
+UPDATE 
+	medical_supplies 
+SET 
+	stock = stock - #{quantity}
+	, change_date = default 
+WHERE 
+	name = #{name} 
+AND 
+	specifications = #{specifications}
+AND 
+	visible = 'Y'
+</update>
+
+<insert id="ForwardingList" parameterType="pink.supply.model.ReleasedVO">
+INSERT INTO
+	released
+	(
+	department
+	, name
+	, specifications
+	, quantity
+	, change_date
+	, memo
+	)
+VALUES
+	(
+	#{department}
+	, #{name}
+	, #{specifications}
+	, #{quantity}
+	, default
+	, #{memo}
+	)
+</insert>
+
 </mapper>

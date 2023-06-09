@@ -13,6 +13,9 @@ public class SuppliesListVO {
 	private double turnover_rate;
 	private char visible;
 	
+	//출고 수량
+	private int quantity;
+	
 	
 	public String getName() {
 		return name;
@@ -74,12 +77,18 @@ public class SuppliesListVO {
 	public void setVisible(char visible) {
 		this.visible = visible;
 	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 	@Override
 	public String toString() {
 		return "SuppliesListVO [name=" + name + ", specifications=" + specifications + ", manufacturer=" + manufacturer
 				+ ", category=" + category + ", subcategory=" + subcategory + ", change_date=" + change_date
 				+ ", in_charge=" + in_charge + ", stock=" + stock + ", turnover_rate=" + turnover_rate + ", visible="
-				+ visible + "]";
+				+ visible + ", quantity=" + quantity + "]";
 	}
 	
 	
