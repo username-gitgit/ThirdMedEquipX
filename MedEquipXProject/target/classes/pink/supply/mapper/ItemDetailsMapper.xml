@@ -3,7 +3,7 @@
 
 <mapper namespace="pink.supply.mapper.ItemDetailsMapper">
 
-<select id="callItemDetails" parameterType="pink.supply.model.ItemDetailsVO" resultType="pink.supply.model.ItemDetailsVO">
+<select id="getItemDetailsByName" parameterType="pink.supply.model.ItemDetailsVO" resultType="pink.supply.model.ItemDetailsVO">
 SELECT
 	name
 	, specifications
@@ -13,8 +13,8 @@ SELECT
 	, stock
 	, turnover_rate
 FROM
-	medical_supplies AS m
+	medical_supplies
 WHERE
-	m.name = "#{name}" AND visible = 'Y' 
+	name = #{name} AND visible = 'Y' 
 </select>
 </mapper>	

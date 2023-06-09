@@ -93,7 +93,7 @@
 					</div>
 
 					<div class="table-responsive">
-						<table class="table  datanew">
+						<table id="dataList" class="table  datanew">
 							<thead>
 								<tr>
 									<th>상품명</th>
@@ -108,19 +108,14 @@
 							<tbody>
 								<c:forEach items="${listCall}" var="listCall">
 									<tr>
-										<td class="productimgname"> <!-- <a href="javascript:void(0);"
-											class="product-img"> <img
-												src="resources/assets/img/product/product1.jpg"
-												alt="product">
-										</a> --> 
-										<a href="/itemDetails/${listCall.name}">${listCall.name}</a></td>
-										<%-- <a href="javascript:itemDetails('${itemCall.name}');"> ${listCall.name}</a></td> --%>
+										<td id="dataName" class="productimgname">
+										<a href="itemDetails/${listCall.name}">${listCall.name}</a></td>
 										<td>${listCall.specifications}</td>
 										<td>${listCall.manufacturer}</td>
 										<td>${listCall.category}</td>
 										<td>${listCall.change_date}</td>
 										<td>${listCall.in_charge}</td>
-										<td>${listCall.stock}</td>
+										<td id="Stock_${listCall.name}">${listCall.stock}</td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -128,9 +123,7 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
-	</div>
 	</div>
 
 
@@ -152,6 +145,10 @@
 	<script src="resources/assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
 	<script src="resources/assets/js/script.js"></script>
+	
+	<script src="resources/js/stockAlert.js"></script>
+	<script src="resources/js/changeColor.js"></script>
+	
 </body>
 
 

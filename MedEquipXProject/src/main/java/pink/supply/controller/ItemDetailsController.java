@@ -19,7 +19,7 @@ public class ItemDetailsController {
 	@Autowired
 	ItemDetailsService itemServ;
 	
-	@GetMapping("/itemDetails/{name}")
+	@GetMapping("itemDetails/{name}")
 	public String itemDetails(@PathVariable("name") String name, Model model) {
 	    // Retrieve the item details using the itemName
 	    ItemDetailsVO itemDetails = itemServ.getItemDetailsByName(name);
@@ -27,7 +27,7 @@ public class ItemDetailsController {
 	    // Add the item details to the model to be used in the view
 	    model.addAttribute("itemDetails", itemDetails);
 	    logger.info("itemDetails = {}", name);
-	    return "/itemDetails";
+	    return "itemDetails";
 	}
 	
 	//Annotation for mapping HTTP GET requests onto specific handler methods

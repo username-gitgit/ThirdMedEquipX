@@ -26,6 +26,10 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
 	rel="stylesheet" />
+	
+<!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
+
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="resources/css/styles.css" rel="stylesheet" />
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -116,10 +120,25 @@
 					<li><a href="index.html"><img
 							src="resources/assets/img/icons/purchase1.svg" alt="img"><span>
 								신규 제품 등록</span> </a></li>
-					<li class="submenu"><a href="javascript:void(0);"><i
+					<li class="submenu"><a href="#" onclick="stockInfo()"><i
 							data-feather="alert-octagon"></i> <span> 재고 부족 </span> </a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 </div>
+	
+	<script src="resources/assets/js/jquery-3.6.0.min.js"></script>
+	<script src="resources/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+	<script src="resources/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+	<script src="resources/js/stockAlert.js"></script>
+
+
+
+
+
+
+	
+	
+	
+	

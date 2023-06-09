@@ -5,7 +5,7 @@
 
 <select id="getItemDetailsByName" parameterType="pink.supply.model.ItemDetailsVO" resultType="pink.supply.model.ItemDetailsVO">
 SELECT
-	NAME
+	name
 	, specifications
 	, category
 	, change_date
@@ -13,8 +13,8 @@ SELECT
 	, stock
 	, turnover_rate
 FROM
-	medical_supplies AS m
+	medical_supplies
 WHERE
-	m.NAME = #{name} AND visible = 'Y' 
+	name = #{name} AND visible = 'Y' 
 </select>
 </mapper>	
