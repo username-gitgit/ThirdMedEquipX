@@ -1,7 +1,5 @@
 package pink.supply.service;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,14 +19,5 @@ public class ItemDetailsServiceImpl implements ItemDetailsService{
 	public ItemDetailsVO getItemDetailsByName(String name) {
 		return itemMap.getItemDetailsByName(name);
 	}
-	
-/*	public ArrayList<ItemDetailsVO> callItemDetails(ItemDetailsVO itemDetails){
-		return itemMap.callItemDetails(itemDetails);
-	}*/
-
-/*	public ArrayList<ItemDetailsVO> callItemDetails(ItemDetailsVO name){
-		return itemMap.callItemDetails(name);
-	}*/
-
 	
 }
