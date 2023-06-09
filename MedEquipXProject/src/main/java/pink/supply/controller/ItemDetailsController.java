@@ -20,7 +20,7 @@ public class ItemDetailsController {
 	ItemDetailsService itemServ;
 	
 	@GetMapping("/itemDetails/{name}")
-	public String itemDetailsPagebyName(@PathVariable("name") String name, Model model) {
+	public String itemDetails(@PathVariable("name") String name, Model model) {
 	    // Retrieve the item details using the itemName
 	    ItemDetailsVO itemDetails = itemServ.getItemDetailsByName(name);
 	    
@@ -32,11 +32,11 @@ public class ItemDetailsController {
 	
 	//Annotation for mapping HTTP GET requests onto specific handler methods
 	//a shortcut for @RequestMapping(method = RequestMethod.GET)
-	@GetMapping("/itemDetails")
+/*	@GetMapping("/itemDetails")
 	public String itemDetailsPage(ItemDetailsVO itemDetails, Model model) {
 		model.addAttribute("itemCall", itemServ.callItemDetails(itemDetails));
 		return "/itemDetails";
-	}
+	}*/
 }
 
 
