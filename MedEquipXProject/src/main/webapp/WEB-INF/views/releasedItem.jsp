@@ -4,9 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<%
-	request.setCharacterEncoding("utf-8");
-%>
+<% request.setCharacterEncoding("utf-8");%>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -15,30 +13,21 @@
 	content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
 <meta name="author" content="Dreamguys - Bootstrap Admin Template">
 <meta name="robots" content="noindex, nofollow">
-<title>물품 상세 보기</title>
+<title>출고 내역</title>
 
-<!-- Favicon-->
-<link rel="icon" type="image/x-icon"
-	href="resources/images/hospital.png" />
-<!-- <link rel="shortcut icon" type="image/x-icon"
-	href="assets/img/favicon.png"> -->
-<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/assets/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="assets/css/animate.css">
+<link rel="stylesheet" href="resources/assets/css/animate.css">
 
-<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+<link rel="stylesheet" href="resources/assets/plugins/select2/css/select2.min.css">
+
+<link rel="stylesheet" href="resources/assets/css/dataTables.bootstrap4.min.css">
 
 <link rel="stylesheet"
-	href="assets/plugins/owlcarousel/owl.carousel.min.css">
+	href="resources/assets/plugins/fontawesome/css/fontawesome.min.css">
+<link rel="stylesheet" href="resources/assets/plugins/fontawesome/css/all.min.css">
 
-<link rel="stylesheet" href="assets/css/dataTables.bootstrap4.min.css">
-
-<link rel="stylesheet"
-	href="assets/plugins/fontawesome/css/fontawesome.min.css">
-<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-
-<link rel="stylesheet" href="assets/css/style.css">
-
+<link rel="stylesheet" href="resources/assets/css/style.css">
 </head>
 <!-- Navigation-->
 <jsp:include page="nav.jsp" flush="false" />
@@ -91,7 +80,7 @@
 									<div class="image-upload">
 										<input type="file">
 										<div class="image-uploads">
-											<img src="resources/assets/img/icons/upload.svg" alt="img">
+											<img src="resources/resources/assets/img/icons/upload.svg" alt="img">
 											<h4>사진 등록하기</h4>
 										</div>
 									</div>
