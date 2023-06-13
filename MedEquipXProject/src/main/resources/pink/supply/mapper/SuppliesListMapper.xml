@@ -18,7 +18,8 @@ FROM
 	medical_supplies
 WHERE
 	visible = 'Y'
-
+ORDER BY 
+	change_date DESC
 </select>
 
 <update id="ForwardingDept" parameterType="pink.supply.model.SuppliesListVO">
@@ -56,5 +57,34 @@ VALUES
 	, #{memo}
 	)
 </insert>
+
+<select id="callDataByQR" parameterType="pink.supply.model.SuppliesListVO" resultType="pink.supply.model.SuppliesListVO">
+SELECT 
+	name
+	, specifications
+	, stock
+	, visible
+FROM 
+	medical_supplies
+WHERE 
+	name = #{name}
+AND 
+	visible = 'Y'
+</select>
+
+<update id="updateItem" parameterType="pink.supply.model.SuppliesListVO">
+UPDATE
+	medical_supplies
+SET
+	stock = stock + #{quantity}
+	, change_date = default 
+WHERE 
+	name = #{name} 
+AND 
+	specifications = #{specifications}
+AND 
+	visible = 'Y'
+
+</update>
 
 </mapper>

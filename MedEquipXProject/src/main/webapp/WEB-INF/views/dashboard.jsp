@@ -51,6 +51,16 @@
 			<div class="card">
 				<div class="card-body">
 					<div class="table-top">
+					<div>
+					<c:choose>
+						<c:when test="${not empty alertName && not empty alertStock}">
+							이상 항목 : ${alertName} 수량 : ${alertStock}
+						</c:when>
+						<c:when test="${not empty OKmsg}">
+							${OKmsg}
+						</c:when>
+					</c:choose>
+					</div>
 						<div class="search-set">
 							<div class="search-path">
 								<a class="btn btn-filter" id="filter_search"> <img
@@ -125,44 +135,6 @@
 			</div>
 		</div>
 	</div>
-
-	<script>
-
-	console.log("inner checkStock()");
-	const minimumStock = 200;
-
-	var HartmannCount = document.getElementById('Stock_Hartmann solution').innerText;
-	var syringeCount = document.getElementById('Stock_syringe 3cc').innerText;
-	var tridolCount = parseInt(document.getElementById('Stock_Tridol').innerText);
-	console.log(syringeCount);
-	console.log("HartmannCount");
-	console.log(tridolCount);
-	// 주사기의 갯수가 최소 재고량보다 적을 때
-	if (syringeCount < minimumStock) {
-		console.log("syringeCount");
-		document.getElementById('Stock_syringe 3cc').style.color = 'red';
-	} else {
-		document.getElementById('Stock_syringe 3cc').style.color = ''; // 기본 글자색으로 되돌리기
-	}
-
-	// 메디컷의 갯수가 최소 재고량보다 적을 때
-	if (HartmannCount < minimumStock) {
-		console.log("HartmannCount");
-		document.getElementById('Stock_Hartmann solution').style.color = 'red';
-	} else {
-		document.getElementById('Stock_Hartmann solution').style.color = '';
-	}
-
-	// Tridol의 갯수가 최소 재고량보다 적을 때
-	if (tridolCount < minimumStock) {
-		document.getElementById('Stock_Tridol').style.color = 'red';
-	} else {
-		document.getElementById('Stock_Tridol').style.color = '';
-	}
-
-	</script>
-
-
 	<script src="resources/assets/js/jquery-3.6.0.min.js"></script>
 
 	<script src="resources/assets/js/feather.min.js"></script>

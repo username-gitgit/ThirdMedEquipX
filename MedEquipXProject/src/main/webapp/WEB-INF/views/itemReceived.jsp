@@ -1,0 +1,197 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+  pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<% request.setCharacterEncoding("utf-8");%>
+<meta charset="utf-8" />
+<meta name="viewport"
+  content="width=device-width, initial-scale=1.0, user-scalable=0">
+<meta name="description" content="POS - Bootstrap Admin Template">
+<meta name="keywords"
+  content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
+<meta name="author" content="Dreamguys - Bootstrap Admin Template">
+<meta name="robots" content="noindex, nofollow">
+<title>입고 등록</title>
+
+<!-- Favicon-->
+<link rel="icon" type="image/x-icon"
+  href="resources/images/hospital.png" />
+<!-- <link rel="shortcut icon" type="image/x-icon"
+  href="resources/asset/img/favicon.png"> -->
+
+<link rel="stylesheet" href="resources/asset/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="resources/asset/css/animate.css">
+
+<link rel="stylesheet" href="resources/asset/plugins/select2/css/select2.min.css">
+
+<link rel="stylesheet" href="resources/asset/css/dataTables.bootstrap4.min.css">
+
+<link rel="stylesheet"
+  href="resources/asset/plugins/fontawesome/css/fontawesome.min.css">
+<link rel="stylesheet" href="resources/asset/plugins/fontawesome/css/all.min.css">
+
+<link rel="stylesheet" href="resources/asset/css/style.css">
+<style>
+/* input 배경 및 그림자 효과 */
+.inputStyle{
+background-color: #fafafa !important;
+box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
+}
+</style>
+</head>
+<body>
+  <div id="global-loader">
+    <div class="whirly-loader"></div>
+  </div>
+
+  <div class="main-wrapper">
+
+    <div class="header">
+
+      <div class="header-left active">
+        <a href="index.html" class="logo"> <img
+          src="resources/asset/img/logo.png" alt="">
+        </a> <a href="index.html" class="logo-small"> <img
+          src="resources/asset/img/logo-small.png" alt="">
+        </a> <a id="toggle_btn" href="javascript:void(0);"> </a>
+      </div>
+
+      <a id="mobile_btn" class="mobile_btn" href="#sidebar"> <span
+        class="bar-icon"> <span></span> <span></span> <span></span>
+      </span>
+      </a>
+
+      <ul class="nav user-menu">
+        <li class="nav-item dropdown has-arrow main-drop"><a
+          href="javascript:void(0);" class="dropdown-toggle nav-link userset"
+          data-bs-toggle="dropdown"> <span class="user-img"><img
+              src="resources/asset/img/profiles/kuromi.jpg" alt=""> <span
+              class="status online"></span></span>
+        </a>
+          <div class="dropdown-menu menu-drop-user">
+            <div class="profilename">
+              <div class="profileset">
+                <span class="user-img"><img
+                  src="resources/asset/img/profiles/kuromi.jpg" alt=""> <span
+                  class="status online"></span></span>
+                <div class="profilesets">
+                  <h6>쿠로미</h6>
+                  <h5>Admin</h5>
+                </div>
+              </div>
+              <hr class="m-0">
+              <hr class="m-0">
+              <a class="dropdown-item logout pb-0" href="signin.html"><img
+                src="resources/asset/img/icons/log-out.svg" class="me-2" alt="img">로그아웃</a>
+            </div>
+          </div></li>
+      </ul>
+
+      <div class="dropdown mobile-user-menu">
+        <a href="javascript:void(0);" class="nav-link dropdown-toggle"
+          data-bs-toggle="dropdown" aria-expanded="false"><i
+          class="fa fa-ellipsis-v"></i></a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="signin.html">로그아웃</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+          <ul>
+            <li><a href="index.html"><img
+                src="resources/asset/img/icons/dashboard.svg" alt="img"><span>
+                  전체 물품 리스트</span> </a></li>
+            <li><a href="index.html"><img
+                src="resources/asset/img/icons/quotation1.svg" alt="img"><span>
+                  입고 등록</span> </a></li>
+            <li><a href="index.html"><img
+                src="resources/asset/img/icons/transfer1.svg" alt="img"><span>
+                  출고 내역</span> </a></li>
+            <li><a href="index.html"><img
+                src="resources/asset/img/icons/purchase1.svg" alt="img"><span>
+                  신규 제품 등록</span> </a></li>
+            <li class="submenu"><a href="javascript:void(0);"><i
+                data-feather="alert-octagon"></i> <span> 재고 부족 </span> </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="page-wrapper d-flex align-items-start justify-content-center">
+      <div class="content">
+
+        <div class="row justify-content-center">
+          <div class="col-lg-6 card shadow rounded-4 border-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="page-header">
+                  <div class="page-title text-center">
+                    <h3 class="fs-3">입고 등록</h3>
+                    <!-- <h6>Create new product</h6> -->
+                  </div>
+                </div>
+                <div class="col-lg-12 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label>물품명</label> <input type="text" class="inputStyle">
+                  </div>
+                </div>
+                <br>
+                <div class="col-lg-12 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label>분류</label> <input type="text" class="inputStyle">
+                  </div>
+                </div>
+                <br>
+                <div class="col-lg-12 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label>현재고</label> <input type="text" class="inputStyle">
+                  </div>
+                </div>
+                <br>
+                <div class="col-lg-12 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label>들어온 재고</label> <input type="text" class="inputStyle">
+                  </div>
+                </div>
+                <br>
+              </div>
+              <div class="col-lg-12 text-center">
+                <a href="javascript:void(0);" class="btn btn-submit fs-5 fw-bolder d-inline-block col-12">재고
+                  등록하기</a>
+                <!-- <a href="productlist.html" class="btn btn-cancel">Cancel</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <script src="resources/asset/js/jquery-3.6.0.min.js"></script>
+
+  <script src="resources/asset/js/feather.min.js"></script>
+
+  <script src="resources/asset/js/jquery.slimscroll.min.js"></script>
+
+  <script src="resources/asset/js/jquery.dataTables.min.js"></script>
+  <script src="resources/asset/js/dataTables.bootstrap4.min.js"></script>
+
+  <script src="resources/asset/js/bootstrap.bundle.min.js"></script>
+
+  <script src="resources/asset/plugins/select2/js/select2.min.js"></script>
+
+  <script src="resources/asset/plugins/sweetalert/sweetalert2.all.min.js"></script>
+  <script src="resources/asset/plugins/sweetalert/sweetalerts.min.js"></script>
+
+  <script src="resources/asset/js/script.js"></script>
+</body>
+</html>

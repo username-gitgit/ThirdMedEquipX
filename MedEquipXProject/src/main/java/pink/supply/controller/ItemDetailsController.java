@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import pink.supply.model.ItemDetailsVO;
 import pink.supply.service.ItemDetailsService;
@@ -31,5 +32,26 @@ public class ItemDetailsController {
 	    logger.info("itemDetails = {}", name);
 	    return "itemDetails";
 	}
+	
+	
+	
+	@GetMapping("itemDetails/updateVisible")
+	public String toggleVisible(ItemDetailsVO vData) {
+		logger.info("update porc = {}", vData);
+		itemServ.toggleVisible(vData);
+		return "redirect:/dashboard";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

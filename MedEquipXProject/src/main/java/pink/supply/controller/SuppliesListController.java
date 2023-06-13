@@ -1,6 +1,8 @@
 package pink.supply.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import pink.supply.model.ReleasedVO;
 import pink.supply.model.SuppliesListVO;
@@ -23,8 +26,31 @@ public class SuppliesListController {
 	@Autowired
 	SuppliesListService supplyServ;
 	
+	
+	
 	@GetMapping("dashboard")
 	public String dashboardPage(SuppliesListVO supList, Model model) {
+		ArrayList<SuppliesListVO> supDatas = supplyServ.callSupplyList(supList);
+		String name = null;
+		int stock = 0;
+		int safetyStock = 200;
+		
+		Optional<SuppliesListVO> result = supDatas.stream()
+				.filter(suppliesListVO -> (suppliesListVO.getName().equals("Syringe 3cc") && suppliesListVO.getStock() < safetyStock) ||
+										  (suppliesListVO.getName().equals("Dextrose 5pct") && suppliesListVO.getStock() < safetyStock) ||
+										  (suppliesListVO.getName().equals("Tridol") && suppliesListVO.getStock() < safetyStock))
+				.findAny();
+
+		if (result.isPresent()) {
+		    SuppliesListVO suppliesListVO = result.get();
+		    name = suppliesListVO.getName();
+	    	stock = suppliesListVO.getStock();
+		    model.addAttribute("alertName", name);
+		    model.addAttribute("alertStock", stock);
+		}else {
+			model.addAttribute("OKmsg", "주요품목 재고 이상없음");
+		}
+		logger.info("call supDatas data is ={}", supDatas);
 		model.addAttribute("listCall", supplyServ.callSupplyList(supList));
 		return "dashboard";
 	}
@@ -42,8 +68,47 @@ public class SuppliesListController {
 		return "dashboard";
 		
 	}
-
 	
+//	@GetMapping("itemReceived")
+//	public String itemReceivedPage() {
+//		return "itemReceived";
+//	}
+	
+	@GetMapping(value = "itemReceived", params = "name")
+	public String callDatasByQR(@RequestParam("name") String name, Model model) {
+		SuppliesListVO SuppliesDatas = supplyServ.callDataByQR(name);
+		logger.info("SuppliesDatas data is ={}", SuppliesDatas);
+		model.addAttribute("getQRDatas", SuppliesDatas);
+		return "itemReceived";
+		
+	}
+	
+	@PostMapping("updateItem")
+	public String updateItem(SuppliesListVO supList) {
+		logger.info("updateItem data is ={}", supList);
+		supplyServ.updateItem(supList);
+		return "itemReceived";
+	}
+
+	//itemReceived.jsp 아직 없음
+	
+	/*
+	 * 
+	 * //		for (SuppliesListVO suppliesListVO : supDatas) {
+//		    if (suppliesListVO.getName().equals("Syringe 3cc") && suppliesListVO.getStock() < 101) {
+//		        name = suppliesListVO.getName();
+//		        stock = suppliesListVO.getStock();
+//		        break;
+//		    }
+//		}
+//
+//		if (name != null) {
+//			logger.info("call name data is ={}", name);
+//		    logger.info("call stock data is ={}", stock);
+//		} else {
+//			logger.info("해당 조건을 만족하는 데이터를 찾지 못했습니다.");
+//		}
+	 */
 	
 	
 	

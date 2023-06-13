@@ -19,5 +19,11 @@ public class ItemDetailsServiceImpl implements ItemDetailsService{
 	public ItemDetailsVO getItemDetailsByName(String name) {
 		return itemMap.getItemDetailsByName(name);
 	}
+
+	@Override
+	public void toggleVisible(ItemDetailsVO vData) {
+		itemMap.toggleVisible(vData);
+		
+	}
 	
 }

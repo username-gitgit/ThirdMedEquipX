@@ -16,4 +16,15 @@ FROM
 WHERE
 	name = #{name} AND visible = 'Y' 
 </select>
+
+<update id="toggleVisible" parameterType="pink.supply.model.ItemDetailsVO">
+UPDATE 
+	medical_supplies 
+SET 
+	visible = 'N' 
+WHERE 
+	name = #{name}
+</update>
+
+
 </mapper>	

@@ -19,7 +19,7 @@
 
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon"
-	href="resources/images/hospital.png" />
+	href="../resources/images/hospital.png" />
 </head>
 <!-- Navigation-->
 
@@ -41,8 +41,9 @@
 									<!-- <h6>Full details of a product</h6> -->
 								</div>
 							</div>
+							<form action="updateVisible" method="get">
 							<div class="bar-code-view">
-								<img src="resources/assets/img/barcode1.png" alt="barcode">
+								<img src="../resources/assets/img/barcode1.png" alt="barcode">
 								<!-- <a
 										class="printimg"> <img src="resources/assets/img/icons/printer.svg"
 										alt="print">
@@ -52,7 +53,10 @@
 								<ul class="product-bar">
 									<li>
 										<h4 class="fw-bold">물품명</h4>
-										<h6>${itemDetails.name}</h6>
+										<h6>
+										${itemDetails.name}
+										<input type="hidden" name="name" value="${itemDetails.name}">
+										</h6>
 									</li>
 									<li>
 										<h4 class="fw-bold">분류</h4>
@@ -81,12 +85,14 @@
 								</ul>
 								<br>
 								<div class="col-lg-12 text-center">
-									<a href="javascript:void(0);"
+									<button type="submit"
 										class="btn btn-submit fs-6 fw-bolder d-inline-block "> 사용
-										중지</a>
+										중지
+									</button>
 									<!-- <a href="productlist.html" class="btn btn-cancel">사용 중지</a> -->
 								</div>
 							</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -104,7 +110,7 @@
 							<div class="slider-product-details">
 								<div class="owl-carousel owl-theme product-slide">
 									<div class="slider-product">
-										<img src="resources/assets/img/product/product69.jpg"
+										<img src="../resources/assets/img/product/product69.jpg"
 											alt="img">
 										<h4>macbookpro.jpg</h4>
 										<h6>581kb</h6>
@@ -125,18 +131,18 @@
 	</div>
 	</div>
 
-	<script src="assets/js/jquery-3.6.0.min.js"></script>
+	<script src="../resources/assets/js/jquery-3.6.0.min.js"></script>
 
-	<script src="assets/js/feather.min.js"></script>
+	<script src="../resources/assets/js/feather.min.js"></script>
 
-	<script src="assets/js/jquery.slimscroll.min.js"></script>
+	<script src="../resources/assets/js/jquery.slimscroll.min.js"></script>
 
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="../resources/assets/js/bootstrap.bundle.min.js"></script>
 
-	<script src="assets/plugins/owlcarousel/owl.carousel.min.js"></script>
+	<script src="../resources/assets/plugins/owlcarousel/owl.carousel.min.js"></script>
 
-	<script src="assets/plugins/select2/js/select2.min.js"></script>
+	<script src="../resources/assets/plugins/select2/js/select2.min.js"></script>
 
-	<script src="assets/js/script.js"></script>
+	<script src="../resources/assets/js/script.js"></script>
 </body>
 </html>

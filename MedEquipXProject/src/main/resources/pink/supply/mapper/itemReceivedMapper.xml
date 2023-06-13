@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="pink.supply.mapper.itemReceivedMapper">
+<update id="callitemReceivedList" parameterType="pink.supply.model.SuppliesListVO">
+update medical_supplies set stock= stock+ #{quantity}, change_date=default
+where name = #{name} and specifications = #{specifications} and visible='Y'
+ </update>
+</mapper>
+

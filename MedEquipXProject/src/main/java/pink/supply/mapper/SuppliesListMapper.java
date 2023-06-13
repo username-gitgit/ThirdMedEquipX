@@ -11,5 +11,7 @@ public interface SuppliesListMapper {
 	public void ForwardingDept(SuppliesListVO supList, ReleasedVO relList);
 	public void ForwardingList(ReleasedVO relList);
 	public void ForwardingDept(SuppliesListVO supList);
+	public SuppliesListVO callDataByQR(String name);
+	public void updateItem(SuppliesListVO supList);
 
 }

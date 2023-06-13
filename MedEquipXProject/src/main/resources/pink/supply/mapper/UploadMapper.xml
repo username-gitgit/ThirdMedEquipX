@@ -8,13 +8,13 @@
 		attach(
 		uuid
 		, uploadpath
-		, filename
+		, name
 		)
 	VALUES
 		(
 		#{uuid}
 		, #{uploadpath}
-		, #{filename}
+		, #{name}
 		)
 </insert>
 

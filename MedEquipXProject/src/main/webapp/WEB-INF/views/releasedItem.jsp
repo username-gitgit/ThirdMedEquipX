@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 <% request.setCharacterEncoding("utf-8");%>
 <meta charset="utf-8">
@@ -13,7 +13,7 @@
 	content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
 <meta name="author" content="Dreamguys - Bootstrap Admin Template">
 <meta name="robots" content="noindex, nofollow">
-<title>출고 내역</title>
+<title>출고 등록</title>
 
 <link rel="stylesheet" href="resources/assets/css/bootstrap.min.css">
 
@@ -45,7 +45,7 @@
 						<form action="releasedItem" method="post">
 							<div class="page-header">
 								<div class="page-title">
-									<h4 class="fs-3">출고 내역</h4>
+									<h4 class="fs-3">출고 등록</h4>
 								</div>
 							</div>
 								<div class="col-lg-12 col-sm-6 col-12">

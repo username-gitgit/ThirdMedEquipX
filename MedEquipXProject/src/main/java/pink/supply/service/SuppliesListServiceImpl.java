@@ -1,5 +1,7 @@
 package pink.supply.service;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +30,21 @@ public class SuppliesListServiceImpl implements SuppliesListService {
 
 	
 	@Override
-	@Transactional
+	@Transactional(rollbackFor = {SQLException.class, IOException.class})
 	public void ForwardingDept(SuppliesListVO supList, ReleasedVO relList) {
 		supplyMap.ForwardingList(relList);
 		supplyMap.ForwardingDept(supList);
+	}
+	
+	@Override
+	public SuppliesListVO callDataByQR(String name) {
+		return supplyMap.callDataByQR(name);
+	}
+
+
+	@Override
+	public void updateItem(SuppliesListVO supList) {
+		supplyMap.updateItem(supList);
 	}
 
 	

@@ -26,20 +26,24 @@ public class UploadController {
 		 UUID uuid = UUID.randomUUID();
 
 	        try {
-	            // 파일 저장
-	            String fileName = file.getOriginalFilename();
-	            // 로컬 디렉토리 경로 설정
-	            String filePath = "C:\\Users\\GR\\git\\MedEquipXProject\\MedEquipXProject\\src\\main\\webapp\\resources\\assets\\img\\product\\" + fileName;
+	        	
+	        	String fileName = file.getOriginalFilename();
+	            int dotIndex = fileName.lastIndexOf(".");
+	            String nameWithoutExtension = fileName.substring(0, dotIndex);
+	            
+	            String filePath = "C:\\Users\\GR\\git\\MedEquipXProject\\MedEquipXProject\\src\\main\\webapp\\resources\\images\\" + fileName;
+	            
 	            File localFile = new File(filePath);
 	            file.transferTo(localFile);
 	            
 	            // 데이터 저장
 	            AttachVO attach = new AttachVO();
 	            attach.setUuid(uuid.toString());
-	            attach.setFilename(fileName);
+	            attach.setName(nameWithoutExtension);
 	            attach.setUploadpath(filePath);
 	            upLoloadServ.imgInsert(attach);
-
+	            
+	            //이동된 페이지에서 알람 띄우자
 	            redirectAttributes.addFlashAttribute("message", "파일 업로드 성공");
 	        } catch (IOException e) {
 	            e.printStackTrace();

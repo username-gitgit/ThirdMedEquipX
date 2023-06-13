@@ -4,7 +4,7 @@ public class AttachVO {
 	
 	private String uuid;
 	private String uploadpath;
-	private String filename;
+	private String name;
 	
 	public String getUuid() {
 		return uuid;
@@ -18,15 +18,16 @@ public class AttachVO {
 	public void setUploadpath(String uploadpath) {
 		this.uploadpath = uploadpath;
 	}
-	public String getFilename() {
-		return filename;
+
+	public String getName() {
+		return name;
 	}
-	public void setFilename(String filename) {
-		this.filename = filename;
+	public void setName(String name) {
+		this.name = name;
 	}
 	@Override
 	public String toString() {
-		return "AttachVO [uuid=" + uuid + ", uploadpath=" + uploadpath + ", filename=" + filename + "]";
+		return "AttachVO [uuid=" + uuid + ", uploadpath=" + uploadpath + ", name=" + name + "]";
 	}
 	
 	
