@@ -36,11 +36,11 @@
 		<div class="whirly-loader"></div>
 	</div>
 <!-- Contents -->
-<div class="page-wrapper">
+<div class="page-wrapper d-flex align-items-start justify-content-center">
 		<div class="content">
 			<div class="row">
-				<div class="col-lg-8 col-sm-12">
-					<div class="col-lg-8 card shadow rounded-4 border-0">
+				<div class=""> <!-- col-lg-8 col-sm-12 -->
+					<div class="col-lg-12 card shadow rounded-4 border-0"> <!-- col-lg-8  -->
 						<div class="card-body">
 						<form action="releasedItem" method="post">
 							<div class="page-header">

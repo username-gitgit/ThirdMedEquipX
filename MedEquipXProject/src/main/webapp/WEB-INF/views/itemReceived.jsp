@@ -16,8 +16,8 @@
 <title>입고 등록</title>
 
 <!-- Favicon-->
-<link rel="icon" type="image/x-icon"
-  href="resources/images/hospital.png" />
+<!-- <link rel="icon" type="image/x-icon"
+  href="resources/images/hospital.png" /> -->
 <!-- <link rel="shortcut icon" type="image/x-icon"
   href="resources/asset/img/favicon.png"> -->
 
@@ -42,12 +42,14 @@ box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
 }
 </style>
 </head>
+<!-- Navigation-->
+<jsp:include page="nav.jsp" flush="false" />
 <body>
   <div id="global-loader">
     <div class="whirly-loader"></div>
   </div>
-
-  <div class="main-wrapper">
+<!-- Contents -->
+<!--   <div class="main-wrapper">
 
     <div class="header">
 
@@ -122,7 +124,7 @@ box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
         </div>
       </div>
     </div>
-
+ -->
     <div
       class="page-wrapper d-flex align-items-start justify-content-center">
       <div class="content">

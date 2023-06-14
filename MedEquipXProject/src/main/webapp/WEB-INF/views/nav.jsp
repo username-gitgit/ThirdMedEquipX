@@ -26,9 +26,10 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
 	rel="stylesheet" />
-	
+
 <!-- SweetAlert2 CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
 
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="../resources/css/styles.css" rel="stylesheet" />
@@ -40,13 +41,16 @@
 
 <link rel="stylesheet" href="../resources/assets/css/animate.css">
 
-<link rel="stylesheet" href="../resources/assets/plugins/select2/css/select2.min.css">
+<link rel="stylesheet"
+	href="../resources/assets/plugins/select2/css/select2.min.css">
 
-<link rel="stylesheet" href="../resources/assets/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet"
+	href="../resources/assets/css/dataTables.bootstrap4.min.css">
 
 <link rel="stylesheet"
 	href="../resources/assets/plugins/fontawesome/css/fontawesome.min.css">
-<link rel="stylesheet" href="../resources/assets/plugins/fontawesome/css/all.min.css">
+<link rel="stylesheet"
+	href="../resources/assets/plugins/fontawesome/css/all.min.css">
 
 <link rel="stylesheet" href="../resources/assets/css/style.css">
 </head>
@@ -78,19 +82,19 @@
 					<div class="profilename">
 						<div class="profileset">
 							<span class="user-img"><img
-								src="../resources/assets/img/profiles/kuromi.jpg" alt=""> <span
-								class="status online"></span></span>
+								src="../resources/assets/img/profiles/kuromi.jpg" alt="">
+								<span class="status online"></span></span>
 							<div class="profilesets">
-							<c:choose>
-							<c:when test="${member.doctor eq 'n'}">
-								<h6>${getName.name}</h6>
-								<h5>Manager</h5>
-							</c:when>
-							<c:when test="${member.doctor eq 'y'}">
-								<h6>${getName.name}</h6>
-								<h5>Admin</h5>
-							</c:when>
-							</c:choose>
+								<c:choose>
+									<c:when test="${member.doctor eq 'n'}">
+										<h6>${getName.name}</h6>
+										<h5>Manager</h5>
+									</c:when>
+									<c:when test="${member.doctor eq 'y'}">
+										<h6>${getName.name}</h6>
+										<h5>Admin</h5>
+									</c:when>
+								</c:choose>
 							</div>
 						</div>
 						<hr class="m-0">
@@ -120,31 +124,27 @@
 					<li><a href="itemReceived"><img
 							src="../resources/assets/img/icons/quotation1.svg" alt="img"><span>
 								입고 등록</span> </a></li>
+					<!-- 아직 신규 물품 등록 newItem.jsp 파일 없음 -->			
+					<li><a href="newItem"><img
+							src="../resources/assets/img/icons/quotation1.svg" alt="img"><span>
+								신규 물품 등록 (아직 없음)</span> </a></li>
 					<li><a href="releasedItem"><img
-							src="../resources/assets/img/icons/transfer1.svg" alt="img"><span>
-								출고 내역</span> </a></li>
-					<li><a href="index.html"><img
 							src="../resources/assets/img/icons/purchase1.svg" alt="img"><span>
-								신규 제품 등록</span> </a></li>
-					<li class="submenu"><a href="#" onclick="stockInfo()"><i
-							data-feather="alert-octagon"></i> <span> 재고 부족 </span> </a></li>
+								출고 등록</span> </a></li>
+					<li><a href="orderHistory"><img
+							src="../resources/assets/img/icons/dashboard.svg" alt="img"><span>
+								출고 내역</span> </a></li>
+					<!-- 아직 재고 부족 링크 없음 -->			
+					<!-- <li class="submenu"><a href="#" onclick="stockInfo()"><i
+							data-feather="alert-octagon"></i> <span> 재고 부족 (아직 없음)</span> </a></li> -->
 				</ul>
 			</div>
 		</div>
 	</div>
 </div>
-	
-	<script src="../resources/assets/js/jquery-3.6.0.min.js"></script>
-	<script src="../resources/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-	<script src="../resources/assets/plugins/sweetalert/sweetalerts.min.js"></script>
-	<script src="../resources/js/stockAlert.js"></script>
 
-
-
-
-
-
-	
-	
-	
-	
+<script src="../resources/assets/js/jquery-3.6.0.min.js"></script>
+<script
+	src="../resources/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+<script src="../resources/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+<script src="../resources/js/stockAlert.js"></script>
