@@ -4,7 +4,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<% request.setCharacterEncoding("utf-8");%>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -51,47 +53,18 @@
 			<div class="card">
 				<div class="card-body">
 					<div class="table-top">
-					<div>
-					<c:choose>
-						<c:when test="${not empty alertName && not empty alertStock}">
-							이상 항목 : ${alertName} 수량 : ${alertStock}
+						<div class="text-danger fw-bold fs-4 Sans">
+							<c:choose>
+								<c:when test="${not empty alertName && not empty alertStock}">
+							이상 항목: ${alertName}, 수량: ${alertStock}
 						</c:when>
-						<c:when test="${not empty OKmsg}">
+								<c:when test="${not empty OKmsg}">
 							${OKmsg}
 						</c:when>
-					</c:choose>
-					</div>
-					<div>
-					<form action="dashboard" method="get">
-					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
-					 type="submit" name="subcategory" value="syringe">syringe</button>
-					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
-					 type="submit" name="subcategory" value="catheter">catheter</button>
-					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
-					 type="submit" name="subcategory" value="3way">3way</button>
-					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
-					 type="submit" name="subcategory" value="non-drug painkillers">non-drug painkillers</button>
-					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
-					 type="submit" name="subcategory" value="Nonsteroidal Painkillers">Nonsteroidal Painkillers</button>
-					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
-					 type="submit" name="subcategory" value="digestive organs">digestive organs</button>
-					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
-					 type="submit" name="subcategory" value="Brain improvement">Brain improvement</button>
-					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
-					 type="submit" name="subcategory" value="Nervous Sanctions">Nervous Sanctions</button>
-					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
-					 type="submit" name="subcategory" value="Allergic inhibitors">Allergic inhibitors</button>
-					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
-					 type="submit" name="subcategory" value="electrolyte solution">electrolyte solution</button>
-					</form>
-					</div>
+							</c:choose>
+						</div>
+ 
 						<div class="search-set">
-							<div class="search-path">
-								<a class="btn btn-filter" id="filter_search"> <img
-									src="resources/assets/img/icons/filter.svg" alt="img"> <span><img
-										src="../resources/assets/img/icons/closes.svg" alt="img"></span>
-								</a>
-							</div>
 							<div class="search-input">
 								<a class="btn btn-searchset"><img
 									src="../resources/assets/img/icons/search-white.svg" alt="img"></a>
@@ -99,33 +72,51 @@
 						</div>
 					</div>
 
-					<div class="card mb-0" id="filter_inputs">
-						<div class="card-body pb-0">
-							<div class="row">
-								<div class="col-lg-12 col-sm-12">
-									<div class="row">
-										<div class="col-lg col-sm-6 col-12">
-											<div class="form-group">
-												<select class="select">
-													<option>분류를 선택하세요.</option>
-													<option>Computers</option>
-													<option>Fruits</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-lg-1 col-sm-6 col-12">
-											<div class="form-group">
-												<a class="btn btn-filters ms-auto"><img
-													src="../resources/assets/img/icons/search-whites.svg"
-													alt="img"></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+					<div class="mb-3">
+						<form action="dashboard" method="get">
+							<!-- btn btn-submit  -->
+							<!-- 원래 영어 단어: syringe catheter 3way non-drug painkillers Nonsteroidal Painkillers digestive organs Brain improvement Nervous Sanctions Allergic inhibitors electrolyte solution -->
+							<span class="fw-bold">분류</span>
+							<button
+								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
+								type="submit" name="subcategory" value="syringe">주사</button>
+							<button
+								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
+								type="submit" name="subcategory" value="catheter">카테터</button>
+							<button
+								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
+								type="submit" name="subcategory" value="3way">3way</button>
+							<button
+								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
+								type="submit" name="subcategory" value="non-drug painkillers">비약물
+								진통제</button>
+							<button
+								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
+								type="submit" name="subcategory"
+								value="Nonsteroidal Painkillers">비스테로이드성 진통제</button>
+							<button
+								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
+								type="submit" name="subcategory" value="digestive organs">소화기관</button>
+							<button
+								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
+								type="submit" name="subcategory" value="Brain improvement">뇌
+								기능 향상</button>
+							<button
+								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
+								type="submit" name="subcategory" value="Nervous Sanctions">신경
+								제재</button>
+							<button
+								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
+								type="submit" name="subcategory" value="Allergic inhibitors">알레르기
+								억제제</button>
+							<button
+								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
+								type="submit" name="subcategory" value="electrolyte solution">전해질
+								용액</button>
+						</form>
 					</div>
 
+					<!-- Contents -->
 					<div class="table-responsive">
 						<table id="dataList" class="table  datanew">
 							<thead>
@@ -142,8 +133,8 @@
 							<tbody>
 								<c:forEach items="${listCall}" var="listCall">
 									<tr>
-										<td id="dataName" class="productimgname">
-										<a href="itemDetails/${listCall.name}">${listCall.name}</a></td>
+										<td id="dataName" class="productimgname"><a
+											href="itemDetails/${listCall.name}">${listCall.name}</a></td>
 										<td>${listCall.specifications}</td>
 										<td>${listCall.manufacturer}</td>
 										<td>${listCall.category}</td>
@@ -153,17 +144,17 @@
 									</tr>
 								</c:forEach>
 								<c:if test="${not empty getCategory}">
-								<c:forEach items="${getCategory}" var="getCategory">
-									<tr>
-										<td id="dataName" class="productimgname"><a
-											href="itemDetails/${getCategory.name}">${getCategory.name}</a></td>
-										<td>${getCategory.specifications}</td>
-										<td>${getCategory.manufacturer}</td>
-										<td>${getCategory.category}</td>
-										<td>${getCategory.change_date}</td>
-										<td>${getCategory.in_charge}</td>
-										<td id="Stock_${getCategory.name}">${getCategory.stock}</td>
-									</tr>
+									<c:forEach items="${getCategory}" var="getCategory">
+										<tr>
+											<td id="dataName" class="productimgname"><a
+												href="itemDetails/${getCategory.name}">${getCategory.name}</a></td>
+											<td>${getCategory.specifications}</td>
+											<td>${getCategory.manufacturer}</td>
+											<td>${getCategory.category}</td>
+											<td>${getCategory.change_date}</td>
+											<td>${getCategory.in_charge}</td>
+											<td id="Stock_${getCategory.name}">${getCategory.stock}</td>
+										</tr>
 									</c:forEach>
 								</c:if>
 							</tbody>
@@ -191,10 +182,10 @@
 	<script src="resources/assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
 	<script src="resources/assets/js/script.js"></script>
-	
+
 	<script src="resources/js/stockAlert.js"></script>
-<!-- 	<script src="resources/js/changeColor.js"></script> -->
-	
+	<!-- 	<script src="resources/js/changeColor.js"></script> -->
+
 </body>
 
 
