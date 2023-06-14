@@ -34,10 +34,19 @@ public class ItemDetailsController {
 	    return "redirect:/itemDetails";
 	}
 	
-	@GetMapping("itemDetails/updateVisible")
-	public String toggleVisible(ItemDetailsVO vData) {
-		logger.info("update porc = {}", vData);
-		itemServ.toggleVisible(vData);
-		return "redirect:/dashboard";
+	@PostMapping("itemDetails/{name}/toggleVisible") //Changing a visible column's value in a database
+	public String toggleVisible(@PathVariable("name") String name, ItemDetailsVO vData) {
+		logger.info("itemDetails = {}", vData);
+		itemServ.toggleVisible(vData); // to update the item details in the "database". //데이터 베이스 내의 visible 칼럼을 업데이트함
+		return "redirect:/itemDetails/" + vData.getName(); // the user is redirected to the updated item details page after updating the visibility status of the item.
 	}
+
 }
+
+//원래 코드
+/*@GetMapping("itemDetails/updateVisible")
+public String toggleVisible(ItemDetailsVO vData) {
+	logger.info("update porc = {}", vData);
+	itemServ.toggleVisible(vData);
+	return "redirect:/dashboard";
+}*/

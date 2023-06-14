@@ -39,57 +39,55 @@
 									<!-- <h6>Full details of a product</h6> -->
 								</div>
 							</div>
-							<form action="updateVisible" method="get">
-							<div class="bar-code-view">
-								<img src="../resources/assets/img/barcode1.png" alt="barcode">
-								<!-- <a
+							<form action="/itemDetails/${itemDetails.name}/toggleVisible"
+								method="post">
+								<!-- <form action="updateVisible" method="post"> -->
+								<div class="bar-code-view">
+									<img src="../resources/assets/img/barcode1.png" alt="barcode">
+									<!-- <a
 										class="printimg"> <img src="resources/assets/img/icons/printer.svg"
 										alt="print">
 									</a> -->
-							</div>
-							<div class="productdetails">
-								<ul class="product-bar">
-									<li>
-										<h4 class="fw-bold">물품명</h4>
-										<h6>
-										${itemDetails.name}
-										<input type="hidden" name="name" value="${itemDetails.name}">
-										</h6>
-									</li>
-									<li>
-										<h4 class="fw-bold">분류</h4>
-										<h6>${itemDetails.category}</h6>
-									</li>
-									<li>
-										<h4 class="fw-bold">규격</h4>
-										<h6>${itemDetails.specifications}</h6>
-									</li>
-									<li>
-										<h4 class="fw-bold">마지막 변경일</h4>
-										<h6>${itemDetails.change_date}</h6>
-									</li>
-									<li>
-										<h4 class="fw-bold">수정한 관리자</h4>
-										<h6>${itemDetails.in_charge}</h6>
-									</li>
-									<li>
-										<h4 class="fw-bold">현재고</h4>
-										<h6>${itemDetails.stock}</h6>
-									</li>
-									<li>
-										<h4 class="fw-bold">1개월 평균 회전</h4>
-										<h6>${itemDetails.turnover_rate}</h6>
-									</li>
-								</ul>
-								<br>
-								<div class="col-lg-12 text-center">
-									<button type="submit"
-										class="btn btn-submit fs-6 fw-bolder d-inline-block "> 사용
-										중지
-									</button>
-									<!-- <a href="productlist.html" class="btn btn-cancel">사용 중지</a> -->
 								</div>
-							</div>
+								<div class="productdetails">
+									<ul class="product-bar">
+										<li>
+											<h4 class="fw-bold">물품명</h4>
+											<h6>
+												${itemDetails.name} <input type="hidden" name="name"
+													value="${itemDetails.name}">
+											</h6>
+										</li>
+										<li>
+											<h4 class="fw-bold">분류</h4>
+											<h6>${itemDetails.category}</h6>
+										</li>
+										<li>
+											<h4 class="fw-bold">규격</h4>
+											<h6>${itemDetails.specifications}</h6>
+										</li>
+										<li>
+											<h4 class="fw-bold">마지막 변경일</h4>
+											<h6>${itemDetails.change_date}</h6>
+										</li>
+										<li>
+											<h4 class="fw-bold">수정한 관리자</h4>
+											<h6>${itemDetails.in_charge}</h6>
+										</li>
+										<li>
+											<h4 class="fw-bold">현재고</h4>
+											<h6>${itemDetails.stock}</h6>
+										</li>
+									</ul>
+									<br>
+									<div class="col-lg-12 text-center Sans">
+										<button type="submit" id="toggleButton"
+											onclick="toggleVisible('${itemDetails.name}')"
+											class="btn btn-submit fs-6 fw-bolder d-inline-block">
+											사용 중지</button>
+										<!-- <a href="productlist.html" class="btn btn-cancel">사용 중지</a> -->
+									</div>
+								</div>
 							</form>
 						</div>
 					</div>
@@ -106,20 +104,14 @@
 							</div>
 
 							<div class="slider-product-details">
-								<div class="owl-carousel owl-theme"> <!--  product-slide -->
+								<div class="owl-carousel owl-theme">
+									<!--  product-slide -->
 									<div class="slider-product">
-										<img class="rounded-3" src="../${callImage.atcVo[0].uploadpath}"
-											alt="img">
+										<img class="rounded-3"
+											src="../${callImage.atcVo[0].uploadpath}" alt="img">
 										<h4>물품명: ${callImage.name}</h4>
-										<h6></h6>
 									</div>
-<%-- 									${callImage.uploadpath} --%>
-									<!-- <div class="slider-product">
-										<img src="resources/assets/img/product/product69.jpg"
-											alt="img">
-										<h4>macbookpro.jpg</h4>
-										<h6>581kb</h6>
-									</div> -->
+									<%-- ${callImage.uploadpath} --%>
 								</div>
 							</div>
 						</div>
@@ -138,10 +130,13 @@
 
 	<script src="../resources/assets/js/bootstrap.bundle.min.js"></script>
 
-	<script src="../resources/assets/plugins/owlcarousel/owl.carousel.min.js"></script>
+	<script
+		src="../resources/assets/plugins/owlcarousel/owl.carousel.min.js"></script>
 
 	<script src="../resources/assets/plugins/select2/js/select2.min.js"></script>
 
 	<script src="../resources/assets/js/script.js"></script>
+
+	<script src="../resources/js/toggleVisible.js"></script>
 </body>
 </html>
