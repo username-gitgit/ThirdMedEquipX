@@ -376,7 +376,7 @@ a {
 }
 
 a:hover {
-	color: #fe820e;
+	color: #5f16f0;
 	-webkit-transition: all .2s ease;
 	-ms-transition: all .2s ease;
 	transition: all .2s ease
@@ -780,7 +780,7 @@ strong {
 }
 
 .btn-submit:hover {
-	background: #fe820e;
+	background: #5f16f0;
 	color: #fff
 }
 
