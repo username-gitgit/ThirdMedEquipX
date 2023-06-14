@@ -118,20 +118,20 @@
 		<div class="sidebar-inner slimscroll">
 			<div id="sidebar-menu" class="sidebar-menu">
 				<ul>
-					<li><a href="dashboard"><img
+					<li><a href="/dashboard"><img
 							src="../resources/assets/img/icons/dashboard.svg" alt="img"><span>
 								전체 물품 리스트</span> </a></li>
-					<li><a href="itemReceived"><img
+					<li><a href="/itemReceived"><img
 							src="../resources/assets/img/icons/quotation1.svg" alt="img"><span>
 								입고 등록</span> </a></li>
 					<!-- 아직 신규 물품 등록 newItem.jsp 파일 없음 -->			
-					<li><a href="newItem"><img
+					<li><a href="/newItem"><img
 							src="../resources/assets/img/icons/quotation1.svg" alt="img"><span>
 								신규 물품 등록 (아직 없음)</span> </a></li>
-					<li><a href="releasedItem"><img
+					<li><a href="/releasedItem"><img
 							src="../resources/assets/img/icons/purchase1.svg" alt="img"><span>
 								출고 등록</span> </a></li>
-					<li><a href="orderHistory"><img
+					<li><a href="/orderHistory"><img
 							src="../resources/assets/img/icons/dashboard.svg" alt="img"><span>
 								출고 내역</span> </a></li>
 					<!-- 아직 재고 부족 링크 없음 -->			
