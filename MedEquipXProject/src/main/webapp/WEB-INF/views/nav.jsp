@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="pink.supply.model.MemberVO"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -55,7 +56,7 @@
 <link rel="stylesheet" href="../resources/assets/css/style.css">
 </head>
 <%
-	String member = (String) session.getAttribute("member");
+	MemberVO member = (MemberVO) session.getAttribute("member");
 %>
 <!-- Navigation-->
 <div class="main-wrapper">
@@ -86,12 +87,12 @@
 								<span class="status online"></span></span>
 							<div class="profilesets">
 								<c:choose>
-									<c:when test="${member.doctor eq 'n'}">
-										<h6>${getName.name}</h6>
+									<c:when test="${member.getDoctor() eq 'n'}">
+										<h6><%=member.getName()%></h6>
 										<h5>Manager</h5>
 									</c:when>
-									<c:when test="${member.doctor eq 'y'}">
-										<h6>${getName.name}</h6>
+									<c:when test="${member.getDoctor() eq 'y'}">
+										<h6><%=member.getName()%></h6>
 										<h5>Admin</h5>
 									</c:when>
 								</c:choose>

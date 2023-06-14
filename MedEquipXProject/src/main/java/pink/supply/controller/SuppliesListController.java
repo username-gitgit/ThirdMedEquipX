@@ -27,7 +27,6 @@ public class SuppliesListController {
 	SuppliesListService supplyServ;
 	
 	
-	//Join과 파일객체를 이용한 이미지파일 동적 출력
 	@GetMapping("dashboard")
 	public String dashboardPage(SuppliesListVO supList, Model model) {
 		ArrayList<SuppliesListVO> supDatas = supplyServ.callSupplyList(supList);

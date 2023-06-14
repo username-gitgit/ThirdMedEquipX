@@ -32,7 +32,7 @@ public class LoginController {
 	}
 	
 	
-	@PostMapping("logisticsIn") //손볼 예정 - 관리자 매니저 분리
+	@PostMapping("logisticsIn")
 	public String logisticsIn(MemberVO member, HttpSession session, Model model) {
 		String clearPw;
 		String encodePw;
@@ -46,12 +46,13 @@ public class LoginController {
 				memData.setPassword("");				
                 session.setAttribute("member", memData);
                 model.addAttribute("getName", memData);
-				return "home";
+                logger.info("memData is {}.", memData);
+				return "redirect:/dashboard";
             } else {//비번 틀렷을때
-                return "/login";
+                return "/LogIn";
             }
         } else {// 일치하는 아이디가 존재하지 않을 시
-        	return "/login";
+        	return "/LogIn";
         }
 	}
 	

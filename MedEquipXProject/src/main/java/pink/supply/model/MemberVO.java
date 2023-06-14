@@ -1,17 +1,13 @@
 package pink.supply.model;
 
 
-import javax.validation.constraints.NotEmpty;
-
 public class MemberVO {
 	
 	private String id;
-	@NotEmpty(message = "이메일을 입력해주세요.")
 	private String email;
-	@NotEmpty
 	private String password;
-	@NotEmpty(message = "이름을 입력해주세요.")
 	private String name;
+	private String doctor;
 
 	
 	public String getId() {
@@ -38,9 +34,16 @@ public class MemberVO {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getDoctor() {
+		return doctor;
+	}
+	public void setDoctor(String doctor) {
+		this.doctor = doctor;
+	}
 	@Override
 	public String toString() {
-		return "MemberVO [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + "]";
+		return "MemberVO [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", doctor="
+				+ doctor + "]";
 	}
 	
 

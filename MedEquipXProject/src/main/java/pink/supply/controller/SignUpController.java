@@ -55,7 +55,7 @@ public class SignUpController {
 		member.setPassword(encodePw);
 		signServ.logisticsJoin(member);
 		logger.info("Welcome signup! member is {}.", member);
-		return "redirect:/";
+		return "redirect:/LogIn";
 		
 	}
 
