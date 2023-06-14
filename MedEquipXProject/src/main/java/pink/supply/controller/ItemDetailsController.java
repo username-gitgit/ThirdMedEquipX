@@ -21,22 +21,18 @@ public class ItemDetailsController {
 	@Autowired
 	ItemDetailsService itemServ;
 	
-	//Annotation for mapping HTTP GET requests onto specific handler methods
-	//a shortcut for @RequestMapping(method = RequestMethod.GET)	
-	@GetMapping("itemDetails/{name}")
+		
+	@GetMapping("itemDetails/{name}") //Annotation for mapping HTTP GET requests onto specific handler methods, a shortcut for @RequestMapping(method = RequestMethod.GET)
 	public String itemDetails(@PathVariable("name") String name, Model model, ItemDetailsVO imageCall) {
-	    // Retrieve the item details using the itemName
-	    ItemDetailsVO itemDetails = itemServ.getItemDetailsByName(name);
+	    ItemDetailsVO itemDetails = itemServ.getItemDetailsByName(name); // Retrieve the item details using the itemName
 	    ItemDetailsVO detailImage = itemServ.callImage(imageCall);
-	    // Add the item details to the model to be used in the view
-	    model.addAttribute("itemDetails", itemDetails);
+	    
+	    model.addAttribute("itemDetails", itemDetails); // Add the item details to the model to be used in the view
 	    model.addAttribute("callImage", itemServ.callImage(imageCall));
 	    logger.info("itemDetails = {}", name);
 	    logger.info("detailImage = {}", detailImage);
-	    return "itemDetails";
+	    return "redirect:/itemDetails";
 	}
-	
-	
 	
 	@GetMapping("itemDetails/updateVisible")
 	public String toggleVisible(ItemDetailsVO vData) {
@@ -44,18 +40,4 @@ public class ItemDetailsController {
 		itemServ.toggleVisible(vData);
 		return "redirect:/dashboard";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

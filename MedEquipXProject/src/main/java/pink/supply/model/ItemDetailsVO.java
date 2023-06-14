@@ -15,7 +15,6 @@ public class ItemDetailsVO {
 	
 	private List<AttachVO> atcVo;
 	
-	
 	public String getName() {
 		return name;
 	}
@@ -78,3 +77,29 @@ public class ItemDetailsVO {
 	}
 	
 }
+
+//added 
+/*	public boolean isCurrentlyVisible() {
+  return visible == 'Y';
+}
+
+public void setCurrentlyVisible(boolean visible) { //update the visible property of the ItemDetailsVO object itself.
+  this.visible = visible ? 'Y' : 'N';
+}*/
+
+
+
+/*	public boolean isVisible() {
+  return visible.equals("Y");
+}
+
+public void setVisible(boolean visible) {
+  this.visible = visible ? "Y" : "N";
+} */
+/*	public boolean isVisible() { //Implement the isVisible() method in ItemDetailsController.java
+	return visible == 'Y';
+}
+
+public void setVisible(boolean visible) { //Implement the setVisible method in ItemDetailsController.java, update the visible property of the ItemDetailsVO object itself.
+	this.visible = visible ? 'Y' : 'N';
+}*/

@@ -16,14 +16,12 @@
 <meta name="author" content="Dreamguys - Bootstrap Admin Template">
 <meta name="robots" content="noindex, nofollow">
 <title>물품 상세 보기</title>
-
 <!-- Favicon-->
-<link rel="icon" type="image/x-icon"
-	href="../resources/images/hospital.png" />
+<!-- <link rel="icon" type="image/x-icon"
+	href="../resources/images/hospital.png" /> -->
 </head>
 <!-- Navigation-->
-
-<jsp:include page="nav.jsp" flush="false" />
+<jsp:include page="nav.jsp" />
 <body>
 	<div id="global-loader">
 		<div class="whirly-loader"></div>
@@ -37,7 +35,7 @@
 						<div class="card-body">
 							<div class="page-header">
 								<div class="page-title">
-									<h4 class="fs-3">물품 상세 정보</h4>
+									<h4 class="Sans fs-3">물품 상세 정보</h4>
 									<!-- <h6>Full details of a product</h6> -->
 								</div>
 							</div>
@@ -102,17 +100,17 @@
 
 							<div class="page-header">
 								<div class="page-title">
-									<h4 class="fs-3">물품 상세 이미지</h4>
+									<h4 class="Sans fs-3">물품 이미지</h4>
 									<!-- <h6>Full details of a product</h6> -->
 								</div>
 							</div>
 
 							<div class="slider-product-details">
-								<div class="owl-carousel owl-theme product-slide">
+								<div class="owl-carousel owl-theme"> <!--  product-slide -->
 									<div class="slider-product">
-										<img src="../${callImage.atcVo[0].uploadpath}"
+										<img class="rounded-3" src="../${callImage.atcVo[0].uploadpath}"
 											alt="img">
-										<h4>${callImage.name}</h4>
+										<h4>물품명: ${callImage.name}</h4>
 										<h6></h6>
 									</div>
 <%-- 									${callImage.uploadpath} --%>

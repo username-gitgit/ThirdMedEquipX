@@ -1,6 +1,5 @@
 package pink.supply.mapper;
 
-import pink.supply.model.AttachVO;
 import pink.supply.model.ItemDetailsVO;
 
 public interface ItemDetailsMapper {

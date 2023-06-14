@@ -21,7 +21,7 @@ public class OrderHistoryController {
 	
 	//Annotation for mapping HTTP GET requests onto specific handler methods
 	//a shortcut for @RequestMapping(method = RequestMethod.GET)
-	@GetMapping("orderHistory")
+	@GetMapping("/orderHistory")
 	public String orderHistory(OrderHistoryVO ordHistory, Model model) {
 		model.addAttribute("historyCall", orderServ.callOrderHistory(ordHistory));
 		return "orderHistory";

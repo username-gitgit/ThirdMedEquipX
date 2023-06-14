@@ -17,7 +17,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>출고 등록</title>
 
-<link rel="stylesheet" href="resources/assets/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="resources/assets/css/bootstrap.min.css">
 
 <link rel="stylesheet" href="resources/assets/css/animate.css">
 
@@ -32,7 +32,7 @@
 <link rel="stylesheet"
 	href="resources/assets/plugins/fontawesome/css/all.min.css">
 
-<link rel="stylesheet" href="resources/assets/css/style.css">
+<link rel="stylesheet" href="resources/assets/css/style.css"> -->
 <style>
 .inputStyle{
 background-color: #fafafa !important;
@@ -57,7 +57,7 @@ box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
 							<div class="row">
 								<div class="page-header">
 									<div class="page-title text-center">
-										<h3 class="fs-3">출고 등록</h3>
+										<h3 class="Sans fs-3">출고 등록</h3>
 								</div>
 							</div>
 							<div class="col-lg-12 col-sm-6 col-12">

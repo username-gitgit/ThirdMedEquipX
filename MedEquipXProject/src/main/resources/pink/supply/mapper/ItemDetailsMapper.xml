@@ -52,5 +52,25 @@ WHERE
 	a.name = #{name}
 </select>
 
+</mapper>
 
-</mapper>	
+<!-- previous codes -->
+<!-- 재사용 visible = 'Y' -> 사용 중지 visible = 'N' -->
+<!-- <update id="stopUsingItem" parameterType="pink.supply.model.ItemDetailsVO">
+UPDATE
+	medical_supplies 
+SET
+	visible = 'N'
+WHERE
+	name = #{name} and visible = 'Y'
+</update> -->
+
+<!-- 사용 중지 visible = "N" -> 재사용 visible = "Y"-->
+<!-- <update id="startUsingItem" parameterType="pink.supply.model.ItemDetailsVO">
+UPDATE
+	medical_supplies 
+SET
+	visible = 'Y'
+WHERE
+	name = #{name} and visible = 'N'
+</update> -->	

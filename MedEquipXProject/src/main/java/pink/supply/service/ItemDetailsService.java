@@ -1,6 +1,5 @@
 package pink.supply.service;
 
-import pink.supply.model.AttachVO;
 import pink.supply.model.ItemDetailsVO;
 
 public interface ItemDetailsService {
