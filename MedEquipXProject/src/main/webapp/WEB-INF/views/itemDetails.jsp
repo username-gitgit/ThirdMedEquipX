@@ -110,11 +110,12 @@
 							<div class="slider-product-details">
 								<div class="owl-carousel owl-theme product-slide">
 									<div class="slider-product">
-										<img src="../resources/assets/img/product/product69.jpg"
+										<img src="../${callImage.atcVo[0].uploadpath}"
 											alt="img">
-										<h4>macbookpro.jpg</h4>
-										<h6>581kb</h6>
+										<h4>${callImage.name}</h4>
+										<h6></h6>
 									</div>
+<%-- 									${callImage.uploadpath} --%>
 									<!-- <div class="slider-product">
 										<img src="resources/assets/img/product/product69.jpg"
 											alt="img">

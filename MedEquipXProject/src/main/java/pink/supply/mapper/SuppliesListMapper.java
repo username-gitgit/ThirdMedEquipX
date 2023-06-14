@@ -13,5 +13,6 @@ public interface SuppliesListMapper {
 	public void ForwardingDept(SuppliesListVO supList);
 	public SuppliesListVO callDataByQR(String name);
 	public void updateItem(SuppliesListVO supList);
+	public ArrayList<SuppliesListVO> selctCategory(String subcategory);
 
 }

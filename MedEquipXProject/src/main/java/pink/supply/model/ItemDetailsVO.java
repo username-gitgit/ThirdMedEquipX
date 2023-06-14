@@ -1,5 +1,7 @@
 package pink.supply.model;
 
+import java.util.List;
+
 public class ItemDetailsVO {
 	
 	private String name; //물품명
@@ -10,6 +12,8 @@ public class ItemDetailsVO {
 	private int stock; //현재고
 	private double turnover_rate; //1개월 평균 회전
 	private char visible; //사용중지(Y/N)
+	
+	private List<AttachVO> atcVo;
 	
 	
 	public String getName() {
@@ -60,11 +64,17 @@ public class ItemDetailsVO {
 	public void setVisible(char visible) {
 		this.visible = visible;
 	}
+	public List<AttachVO> getAtcVo() {
+		return atcVo;
+	}
+	public void setAtcVo(List<AttachVO> atcVo) {
+		this.atcVo = atcVo;
+	}
 	@Override
 	public String toString() {
-		return "ItemDetailsVO [name=" + name + ", specifications=" + specifications + ", category=" + category 
-				+ ", change_date=" + change_date + ", in_charge=" + in_charge + ", stock=" + stock 
-				+ ", turnover_rate=" + turnover_rate + ", visible="+ visible + "]";
+		return "ItemDetailsVO [name=" + name + ", category=" + category + ", specifications=" + specifications
+				+ ", change_date=" + change_date + ", in_charge=" + in_charge + ", stock=" + stock + ", turnover_rate="
+				+ turnover_rate + ", visible=" + visible + ", atcVo=" + atcVo + "]";
 	}
 	
 }

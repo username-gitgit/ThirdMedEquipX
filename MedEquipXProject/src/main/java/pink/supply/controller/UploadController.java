@@ -31,7 +31,8 @@ public class UploadController {
 	            int dotIndex = fileName.lastIndexOf(".");
 	            String nameWithoutExtension = fileName.substring(0, dotIndex);
 	            
-	            String filePath = "C:\\Users\\GR\\git\\MedEquipXProject\\MedEquipXProject\\src\\main\\webapp\\resources\\images\\" + fileName;
+	            String relativeFilePath = "resources/images/" + fileName;
+	            String filePath = "C:/Users/GR/git/MedEquipXProject/MedEquipXProject/src/main/webapp/resources/images/" + fileName;
 	            
 	            File localFile = new File(filePath);
 	            file.transferTo(localFile);
@@ -40,7 +41,7 @@ public class UploadController {
 	            AttachVO attach = new AttachVO();
 	            attach.setUuid(uuid.toString());
 	            attach.setName(nameWithoutExtension);
-	            attach.setUploadpath(filePath);
+	            attach.setUploadpath(relativeFilePath);
 	            upLoloadServ.imgInsert(attach);
 	            
 	            //이동된 페이지에서 알람 띄우자

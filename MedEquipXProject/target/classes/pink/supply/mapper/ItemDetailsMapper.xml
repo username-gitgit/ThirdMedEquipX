@@ -26,5 +26,31 @@ WHERE
 	name = #{name}
 </update>
 
+<resultMap type="pink.supply.model.ItemDetailsVO" id="detailImage">
+	<result column="name" property="name"/>
+	<result column="visible" property="visible"/>
+	<collection property="atcVo" resultMap="atcVo"/>
+</resultMap>
+<resultMap type="pink.supply.model.AttachVO" id="atcVo">
+	<result column="name" property="name"/>
+	<result column="uploadpath" property="uploadpath"/>
+</resultMap>
+
+<select id="callImage" parameterType="pink.supply.model.ItemDetailsVO" resultMap="detailImage">
+SELECT 
+	a.name
+	, a.uploadpath
+	, ms.name
+	, ms.visible
+FROM
+	medical_supplies ms
+JOIN 
+	attach a
+ON 
+	a.name=ms.name
+WHERE 
+	a.name = #{name}
+</select>
+
 
 </mapper>	

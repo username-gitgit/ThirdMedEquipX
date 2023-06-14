@@ -1,10 +1,14 @@
 package pink.supply.model;
 
+import java.util.List;
+
 public class AttachVO {
 	
 	private String uuid;
 	private String uploadpath;
 	private String name;
+	
+	private List<ItemDetailsVO> detailVo;
 	
 	public String getUuid() {
 		return uuid;
@@ -25,9 +29,16 @@ public class AttachVO {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public List<ItemDetailsVO> getDetailVo() {
+		return detailVo;
+	}
+	public void setDetailVo(List<ItemDetailsVO> detailVo) {
+		this.detailVo = detailVo;
+	}
 	@Override
 	public String toString() {
-		return "AttachVO [uuid=" + uuid + ", uploadpath=" + uploadpath + ", name=" + name + "]";
+		return "AttachVO [uuid=" + uuid + ", uploadpath=" + uploadpath + ", name=" + name + ", detailVo=" + detailVo
+				+ "]";
 	}
 	
 	

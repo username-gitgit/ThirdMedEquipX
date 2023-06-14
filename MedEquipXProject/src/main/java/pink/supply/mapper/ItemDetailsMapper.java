@@ -1,10 +1,12 @@
 package pink.supply.mapper;
 
+import pink.supply.model.AttachVO;
 import pink.supply.model.ItemDetailsVO;
 
 public interface ItemDetailsMapper {
 	
 	public ItemDetailsVO getItemDetailsByName(String name);
 	public void toggleVisible(ItemDetailsVO vData);
+	public ItemDetailsVO callImage(ItemDetailsVO imageCall);
 	
 }

@@ -11,5 +11,6 @@ public interface SuppliesListService {
 	public void ForwardingDept(SuppliesListVO supList, ReleasedVO relList);
 	public SuppliesListVO callDataByQR(String name);
 	public void updateItem(SuppliesListVO supList);
+	public ArrayList<SuppliesListVO> selctCategory(String subcategory);
 
 }

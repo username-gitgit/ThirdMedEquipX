@@ -87,4 +87,21 @@ AND
 
 </update>
 
+<select id="selctCategory" parameterType="pink.supply.model.SuppliesListVO" resultType="pink.supply.model.SuppliesListVO">
+SELECT 
+	name
+	, specifications
+	, manufacturer
+	, category
+	, subcategory
+	, change_date
+	, in_charge
+	, stock
+	, turnover_rate
+FROM 
+ 	medical_supplies
+WHERE
+	subcategory = #{subcategory}
+</select>
+
 </mapper>

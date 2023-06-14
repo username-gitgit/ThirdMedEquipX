@@ -27,7 +27,7 @@ public class SuppliesListController {
 	SuppliesListService supplyServ;
 	
 	
-	
+	//Join과 파일객체를 이용한 이미지파일 동적 출력
 	@GetMapping("dashboard")
 	public String dashboardPage(SuppliesListVO supList, Model model) {
 		ArrayList<SuppliesListVO> supDatas = supplyServ.callSupplyList(supList);
@@ -52,6 +52,13 @@ public class SuppliesListController {
 		}
 		logger.info("call supDatas data is ={}", supDatas);
 		model.addAttribute("listCall", supplyServ.callSupplyList(supList));
+		return "dashboard";
+	}
+	
+	@GetMapping(value = "dashboard", params = "subcategory")
+	public String callDatasByCategory(@RequestParam("subcategory") String subcategory, Model model) {
+		logger.info("subcategory data is ={}", subcategory);
+		model.addAttribute("getCategory", supplyServ.selctCategory(subcategory));
 		return "dashboard";
 	}
 	
@@ -91,29 +98,6 @@ public class SuppliesListController {
 	}
 
 	//itemReceived.jsp 아직 없음
-	
-	/*
-	 * 
-	 * //		for (SuppliesListVO suppliesListVO : supDatas) {
-//		    if (suppliesListVO.getName().equals("Syringe 3cc") && suppliesListVO.getStock() < 101) {
-//		        name = suppliesListVO.getName();
-//		        stock = suppliesListVO.getStock();
-//		        break;
-//		    }
-//		}
-//
-//		if (name != null) {
-//			logger.info("call name data is ={}", name);
-//		    logger.info("call stock data is ={}", stock);
-//		} else {
-//			logger.info("해당 조건을 만족하는 데이터를 찾지 못했습니다.");
-//		}
-	 */
-	
-	
-	
-	
-	
 	
 	
 	

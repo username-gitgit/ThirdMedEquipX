@@ -47,6 +47,9 @@ public class SuppliesListServiceImpl implements SuppliesListService {
 		supplyMap.updateItem(supList);
 	}
 
-	
+	@Override
+	public ArrayList<SuppliesListVO> selctCategory(String subcategory) {
+		return supplyMap.selctCategory(subcategory);
+	}
 
 }

@@ -61,16 +61,40 @@
 						</c:when>
 					</c:choose>
 					</div>
+					<div>
+					<form action="dashboard" method="get">
+					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
+					 type="submit" name="subcategory" value="syringe">syringe</button>
+					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
+					 type="submit" name="subcategory" value="catheter">catheter</button>
+					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
+					 type="submit" name="subcategory" value="3way">3way</button>
+					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
+					 type="submit" name="subcategory" value="non-drug painkillers">non-drug painkillers</button>
+					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
+					 type="submit" name="subcategory" value="Nonsteroidal Painkillers">Nonsteroidal Painkillers</button>
+					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
+					 type="submit" name="subcategory" value="digestive organs">digestive organs</button>
+					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
+					 type="submit" name="subcategory" value="Brain improvement">Brain improvement</button>
+					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
+					 type="submit" name="subcategory" value="Nervous Sanctions">Nervous Sanctions</button>
+					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
+					 type="submit" name="subcategory" value="Allergic inhibitors">Allergic inhibitors</button>
+					<button class="btn btn-submit fs-6 fw-bolder d-inline-block"
+					 type="submit" name="subcategory" value="electrolyte solution">electrolyte solution</button>
+					</form>
+					</div>
 						<div class="search-set">
 							<div class="search-path">
 								<a class="btn btn-filter" id="filter_search"> <img
 									src="resources/assets/img/icons/filter.svg" alt="img"> <span><img
-										src="resources/assets/img/icons/closes.svg" alt="img"></span>
+										src="../resources/assets/img/icons/closes.svg" alt="img"></span>
 								</a>
 							</div>
 							<div class="search-input">
 								<a class="btn btn-searchset"><img
-									src="resources/assets/img/icons/search-white.svg" alt="img"></a>
+									src="../resources/assets/img/icons/search-white.svg" alt="img"></a>
 							</div>
 						</div>
 					</div>
@@ -92,7 +116,7 @@
 										<div class="col-lg-1 col-sm-6 col-12">
 											<div class="form-group">
 												<a class="btn btn-filters ms-auto"><img
-													src="resources/assets/img/icons/search-whites.svg"
+													src="../resources/assets/img/icons/search-whites.svg"
 													alt="img"></a>
 											</div>
 										</div>
@@ -128,6 +152,20 @@
 										<td id="Stock_${listCall.name}">${listCall.stock}</td>
 									</tr>
 								</c:forEach>
+								<c:if test="${not empty getCategory}">
+								<c:forEach items="${getCategory}" var="getCategory">
+									<tr>
+										<td id="dataName" class="productimgname"><a
+											href="itemDetails/${getCategory.name}">${getCategory.name}</a></td>
+										<td>${getCategory.specifications}</td>
+										<td>${getCategory.manufacturer}</td>
+										<td>${getCategory.category}</td>
+										<td>${getCategory.change_date}</td>
+										<td>${getCategory.in_charge}</td>
+										<td id="Stock_${getCategory.name}">${getCategory.stock}</td>
+									</tr>
+									</c:forEach>
+								</c:if>
 							</tbody>
 						</table>
 					</div>

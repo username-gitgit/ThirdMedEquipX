@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import pink.supply.mapper.ItemDetailsMapper;
+import pink.supply.model.AttachVO;
 import pink.supply.model.ItemDetailsVO;
 
 //This class will implement the 'ItemDetailsServiceImpl' interface.
@@ -24,6 +25,12 @@ public class ItemDetailsServiceImpl implements ItemDetailsService{
 	public void toggleVisible(ItemDetailsVO vData) {
 		itemMap.toggleVisible(vData);
 		
+	}
+
+	@Override
+	public ItemDetailsVO callImage(ItemDetailsVO imageCall) {
+		// TODO Auto-generated method stub
+		return itemMap.callImage(imageCall);
 	}
 	
 }
