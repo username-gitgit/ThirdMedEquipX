@@ -31,7 +31,7 @@ public class ItemDetailsController {
 	    model.addAttribute("callImage", itemServ.callImage(imageCall));
 	    logger.info("itemDetails = {}", name);
 	    logger.info("detailImage = {}", detailImage);
-	    return "redirect:/itemDetails";
+	    return "itemDetails";
 	}
 	
 	@PostMapping("itemDetails/{name}/toggleVisible") //Changing a visible column's value in a database

@@ -21,13 +21,13 @@ public class UploadController {
     private UploadService upLoloadServ;
 	
 	 @PostMapping("/uploadForm")
-	    public String uploadForm(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
-		 
+	    public String uploadForm(@RequestParam("file") MultipartFile[] file, RedirectAttributes redirectAttributes) {
+		 for (MultipartFile uploadedFile : file) {
 		 UUID uuid = UUID.randomUUID();
 
 	        try {
 	        	
-	        	String fileName = file.getOriginalFilename();
+	        	String fileName = uploadedFile.getOriginalFilename();
 	            int dotIndex = fileName.lastIndexOf(".");
 	            String nameWithoutExtension = fileName.substring(0, dotIndex);
 	            
@@ -35,7 +35,7 @@ public class UploadController {
 	            String filePath = "C:/Users/GR/git/MedEquipXProject/MedEquipXProject/src/main/webapp/resources/images/" + fileName;
 	            
 	            File localFile = new File(filePath);
-	            file.transferTo(localFile);
+	            uploadedFile.transferTo(localFile);
 	            
 	            // 데이터 저장
 	            AttachVO attach = new AttachVO();
@@ -50,6 +50,8 @@ public class UploadController {
 	            e.printStackTrace();
 	            redirectAttributes.addFlashAttribute("message", "파일 업로드 실패");
 	        }
+		 }
+	     
 
 	        return "redirect:/";
 	    }
