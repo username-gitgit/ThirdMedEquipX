@@ -13,15 +13,12 @@ import pink.supply.service.OrderHistoryService;
 @Controller
 public class OrderHistoryController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(OrderHistoryController.class);
+	private static final Logger  = LoggerFactory.getLogger(OrderHistoryController.class);
 	
-	//의존성 주입 automatic dependency injection
-	@Autowired
-	OrderHistoryService orderServ;
+	@Autowired //의존성 주입 automatic dependency injection
+	OrderHistoryService orderServ; 
 	
-	//Annotation for mapping HTTP GET requests onto specific handler methods
-	//a shortcut for @RequestMapping(method = RequestMethod.GET)
-	@GetMapping("/orderHistory")
+	@GetMapping("/orderHistory") //Annotation for mapping HTTP GET requests onto specific handler methods, a shortcut for @RequestMapping(method = RequestMethod.GET)
 	public String orderHistory(OrderHistoryVO ordHistory, Model model) {
 		model.addAttribute("historyCall", orderServ.callOrderHistory(ordHistory));
 		return "orderHistory";

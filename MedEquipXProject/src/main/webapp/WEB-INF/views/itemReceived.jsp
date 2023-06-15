@@ -62,13 +62,13 @@ box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
 							</div>
 							<div class="col-lg-12 col-sm-6 col-12">
 								<div class="form-group">
-									<label>물품명</label> <input name="name" type="text"
-										class="inputStyle">
+									<label>물품명</label> <input name="name" type="text"
+										class="inputStyle"> <!-- 물품명 -->
 								</div>
 							</div>
 							<div class="col-lg-12 col-sm-6 col-12">
 								<div class="form-group">
-									<label>분류</label> <input name="category" type="text"
+									<label>분류</label> <input name="category" type="text"
 										class="inputStyle">
 								</div>
 							</div>
@@ -93,9 +93,9 @@ box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
 								</div>
 							</div>
 							<br>
-							<div class="col-lg-12 text-center">
+							<div class="col-lg-12 text-center Sans">
 								<button type="submit"
-									class="btn btn-submit fs-5 fw-bolder d-inline-block col-12">출고하기</button>
+									class="btn btn-submit fs-5 fw-bolder d-inline-block col-12 ">등록하기</button>
 							</div>
 							</form>
 						</div>

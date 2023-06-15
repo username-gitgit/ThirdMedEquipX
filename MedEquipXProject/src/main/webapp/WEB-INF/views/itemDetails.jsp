@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,10 +15,7 @@
 	content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
 <meta name="author" content="Dreamguys - Bootstrap Admin Template">
 <meta name="robots" content="noindex, nofollow">
-<title>물품 상세 보기</title>
-<!-- Favicon-->
-<!-- <link rel="icon" type="image/x-icon"
-	href="../resources/images/hospital.png" /> -->
+<title>물품 상세 정보</title>
 </head>
 <!-- Navigation-->
 <jsp:include page="nav.jsp" />
@@ -33,19 +30,20 @@
 				<div class="col-lg-8 col-sm-12">
 					<div class="col-lg-8 card shadow rounded-4 border-0">
 						<div class="card-body">
+
 							<div class="page-header">
 								<div class="page-title">
 									<h4 class="Sans fs-3">물품 상세 정보</h4>
 									<!-- <h6>Full details of a product</h6> -->
 								</div>
 							</div>
+							<!-- <form action="updateVisible" method="post"> -->
 							<form action="/itemDetails/${itemDetails.name}/toggleVisible"
 								method="post">
-								<!-- <form action="updateVisible" method="post"> -->
 								<div class="bar-code-view">
 									<img src="../resources/assets/img/barcode1.png" alt="barcode">
 									<!-- <a
-										class="printimg"> <img src="resources/assets/img/icons/printer.svg"
+										class="printimg"> <img src=".resources/assets/img/icons/printer.svg"
 										alt="print">
 									</a> -->
 								</div>
@@ -53,10 +51,7 @@
 									<ul class="product-bar">
 										<li>
 											<h4 class="fw-bold">물품명</h4>
-											<h6>
-												${itemDetails.name} <input type="hidden" name="name"
-													value="${itemDetails.name}">
-											</h6>
+											<h6>${itemDetails.name}</h6>
 										</li>
 										<li>
 											<h4 class="fw-bold">분류</h4>
@@ -81,11 +76,11 @@
 									</ul>
 									<br>
 									<div class="col-lg-12 text-center Sans">
-										<button type="submit" id="toggleButton"
+										<button type="button" id="toggleButton"
 											onclick="toggleVisible('${itemDetails.name}')"
-											class="btn btn-submit fs-6 fw-bolder d-inline-block">
+											class="btn btn-submit fs-6 fw-bolder d-inline-block Sans">
 											사용 중지</button>
-										<!-- <a href="productlist.html" class="btn btn-cancel">사용 중지</a> -->
+
 									</div>
 								</div>
 							</form>
@@ -105,13 +100,11 @@
 
 							<div class="slider-product-details">
 								<div class="owl-carousel owl-theme">
-									<!--  product-slide -->
+									<!-- icon: product-slide -->
 									<div class="slider-product">
-										<img class="rounded-3"
-											src="../${callImage.atcVo[0].uploadpath}" alt="img">
-										<h4>물품명: ${callImage.name}</h4>
+										<img src="../${callImage.atcVo[0].uploadpath}" alt="img">
+										<h4>물품명: ${itemDetails.name}</h4>
 									</div>
-									<%-- ${callImage.uploadpath} --%>
 								</div>
 							</div>
 						</div>
@@ -122,7 +115,7 @@
 	</div>
 	</div>
 
-	<script src="../resources/assets/js/jquery-3.6.0.min.js"></script>
+	<!-- <script src="resources/assets/js/jquery-3.6.0.min.js"></script> -->
 
 	<script src="../resources/assets/js/feather.min.js"></script>
 
@@ -136,6 +129,8 @@
 	<script src="../resources/assets/plugins/select2/js/select2.min.js"></script>
 
 	<script src="../resources/assets/js/script.js"></script>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 	<script src="../resources/js/toggleVisible.js"></script>
 </body>

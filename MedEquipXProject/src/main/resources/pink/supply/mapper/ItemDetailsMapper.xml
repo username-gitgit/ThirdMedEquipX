@@ -3,27 +3,30 @@
 <mapper namespace="pink.supply.mapper.ItemDetailsMapper">
 
 <select id="getItemDetailsByName" parameterType="pink.supply.model.ItemDetailsVO" resultType="pink.supply.model.ItemDetailsVO">
-SELECT
-	name
-	, specifications
-	, category
-	, change_date
-	, in_charge
-	, stock
-	, turnover_rate
-FROM
-	medical_supplies
-WHERE
-	name = #{name} AND visible = 'Y' 
+	SELECT
+		name
+		, specifications
+		, category
+		, change_date
+		, in_charge
+		, stock
+		<!-- , turnover_rate -->
+	FROM
+		medical_supplies
+	WHERE
+		name = #{name} <!-- AND visible = 'Y' -->
 </select>
 
+<!-- 재사용 visible = 'Y' -> 사용 중지 visible = 'N' -->
+<!-- 사용 중지 visible = "N" -> 재사용 visible = "Y"-->
 <update id="toggleVisible" parameterType="pink.supply.model.ItemDetailsVO">
-UPDATE 
-	medical_supplies 
-SET 
-	visible = 'N' 
-WHERE 
-	name = #{name}
+    UPDATE
+    	medical_supplies 
+    SET
+    	visible = 'N' <!-- visible = #{yn} -->
+    END
+    WHERE
+    	name = #{name}
 </update>
 
 <resultMap type="pink.supply.model.ItemDetailsVO" id="detailImage">
@@ -54,6 +57,17 @@ WHERE
 
 </mapper>
 
+<!-- 
+    UPDATE
+    	medical_supplies 
+    SET
+    	visible = CASE 
+	        WHEN visible = 'Y' THEN 'N'
+	        WHEN visible = 'N' THEN 'Y'
+    END
+    WHERE
+    	name = #{name} -->
+
 <!-- previous codes -->
 <!-- 재사용 visible = 'Y' -> 사용 중지 visible = 'N' -->
 <!-- <update id="stopUsingItem" parameterType="pink.supply.model.ItemDetailsVO">
@@ -73,4 +87,4 @@ SET
 	visible = 'Y'
 WHERE
 	name = #{name} and visible = 'N'
-</update> -->	
+</update> -->

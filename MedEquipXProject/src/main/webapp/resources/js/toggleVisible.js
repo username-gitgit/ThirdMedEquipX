@@ -14,7 +14,8 @@ function toggleVisible(name) { // "name" 필요함
 	    type : 'POST',
 	    success : function(response) {
 		console.log('Data updated successfully'); // Handle the success response
-		window.location.href = '/itemDetails/' + name; // redirect the user to the desired URL
+		window.location.href = '/dashboard';
+		//window.location.href = '/itemDetails/' + name; // redirect the user to the desired URL
 	    },
 	    error : function(xhr, status, error) {
 		console.log('Error updating data:', error); // Handle the error response

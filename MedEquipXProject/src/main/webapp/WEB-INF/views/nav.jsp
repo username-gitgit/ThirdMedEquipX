@@ -118,22 +118,25 @@
 	<div class="sidebar" id="sidebar">
 		<div class="sidebar-inner slimscroll">
 			<div id="sidebar-menu" class="sidebar-menu">
-				<ul>
+				<ul> <!-- purchase1 quotation1 transfer1 -->
 					<li><a href="/dashboard"><img
 							src="../resources/assets/img/icons/dashboard.svg" alt="img"><span>
 								전체 물품 리스트</span> </a></li>
+					<li><a href="/stopUsing"><img
+							src="../resources/assets/img/icons/delete1.svg" alt="img"><span>
+								사용 중지 물품</span> </a></li>			
 					<li><a href="/itemReceived"><img
 							src="../resources/assets/img/icons/quotation1.svg" alt="img"><span>
 								입고 등록</span> </a></li>
 					<!-- 아직 신규 물품 등록 newItem.jsp 파일 없음 -->			
 					<li><a href="/newItem"><img
-							src="../resources/assets/img/icons/quotation1.svg" alt="img"><span>
+							src="../resources/assets/img/icons/scanners.svg" alt="img"><span>
 								신규 물품 등록</span> </a></li>
 					<li><a href="/releasedItem"><img
-							src="../resources/assets/img/icons/purchase1.svg" alt="img"><span>
+							src="../resources/assets/img/icons/product.svg" alt="img"><span>
 								출고 등록</span> </a></li>
 					<li><a href="/orderHistory"><img
-							src="../resources/assets/img/icons/dashboard.svg" alt="img"><span>
+							src="../resources/assets/img/icons/transfer1.svg" alt="img"><span>
 								출고 내역</span> </a></li>
 					<!-- 아직 재고 부족 링크 없음 -->			
 					<!-- <li class="submenu"><a href="#" onclick="stockInfo()"><i

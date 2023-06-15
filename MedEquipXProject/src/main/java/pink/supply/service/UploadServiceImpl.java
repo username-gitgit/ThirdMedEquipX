@@ -3,7 +3,7 @@ package pink.supply.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import pink.supply.mapper.UploadMapper;
+import pink.supply.mapper.StopUsingMapper;
 import pink.supply.model.AttachVO;
 import pink.supply.model.SuppliesListVO;
 
@@ -11,7 +11,7 @@ import pink.supply.model.SuppliesListVO;
 public class UploadServiceImpl implements UploadService {
 	
 	@Autowired
-	UploadMapper upLoadMap;
+	StopUsingMapper upLoadMap;
 
 	@Override
 	public void imgInsert(AttachVO attach) {

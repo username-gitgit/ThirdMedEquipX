@@ -58,7 +58,7 @@ box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
 						<form action="uploadForm" method="post" enctype="multipart/form-data">
 							<div class="row">
 								<div class="page-header">
-									<div class="page-title text-center">
+									<div class="page-title text-center Sans">
 										<h3 class="fs-3">신규 물품 등록</h3>
 										<!-- <h6>Create new product</h6> -->
 									</div>
@@ -108,7 +108,7 @@ box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-12 text-center">
+							<div class="col-lg-12 text-center Sans">
 								<button type="submit" class="btn btn-submit fs-5 fw-bolder d-inline-block col-12">물품
 									등록하기</button>
 								<!-- <a href="productlist.html" class="btn btn-cancel">Cancel</a> -->
