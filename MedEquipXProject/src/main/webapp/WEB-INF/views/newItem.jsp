@@ -55,6 +55,7 @@ box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
 				<div class="row justify-content-center">
 					<div class="col-lg-6 card shadow rounded-4 border-0">
 						<div class="card-body">
+						<form action="uploadForm" method="post" enctype="multipart/form-data">
 							<div class="row">
 								<div class="page-header">
 									<div class="page-title text-center">
@@ -64,25 +65,31 @@ box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
 								</div>
 								<div class="col-lg-12 col-sm-6 col-12">
 									<div class="form-group">
-										<label>물품명</label> <input type="text" class="inputStyle">
+										<label>물품명</label> <input type="text" name="name" class="inputStyle">
 									</div>
 								</div>
 								<br>
 								<div class="col-lg-12 col-sm-6 col-12">
 									<div class="form-group">
-										<label>분류</label> <input type="text" class="inputStyle">
+										<label>대분류</label> <input type="text" name="category" class="inputStyle">
 									</div>
 								</div>
 								<br>
 								<div class="col-lg-12 col-sm-6 col-12">
 									<div class="form-group">
-										<label>규격</label> <input type="text" class="inputStyle">
+										<label>중분류</label> <input type="text" name="subcategory" class="inputStyle">
 									</div>
 								</div>
 								<br>
 								<div class="col-lg-12 col-sm-6 col-12">
 									<div class="form-group">
-										<label>제조사</label> <input type="text" class="inputStyle">
+										<label>규격</label> <input type="text" name="specifications" class="inputStyle">
+									</div>
+								</div>
+								<br>
+								<div class="col-lg-12 col-sm-6 col-12">
+									<div class="form-group">
+										<label>제조사</label> <input type="text" name="manufacturer" class="inputStyle">
 									</div>
 								</div>
 								<br>
@@ -91,19 +98,22 @@ box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
 								<div class="form-group">
 									<label> 제품 사진</label>
 									<div class="image-upload">
-										<input type="file">
+										<input type="file" name="file" id="myFileInput" onchange="handleFileSelect(event)">
 										<div class="image-uploads">
-											<img src="resources/assets/img/icons/upload.svg" alt="img">
-											<h4>사진 등록하기</h4>
+										<div id="preview">
+										</div>
+											<img src="resources/assets/img/icons/upload.svg" id="imgSrc" alt="img">
+<!-- 											<h4>사진 등록하기</h4> -->
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="col-lg-12 text-center">
-								<a href="javascript:void(0);" class="btn btn-submit fs-5 fw-bolder d-inline-block col-12">물품
-									등록하기</a>
+								<button type="submit" class="btn btn-submit fs-5 fw-bolder d-inline-block col-12">물품
+									등록하기</button>
 								<!-- <a href="productlist.html" class="btn btn-cancel">Cancel</a> -->
 							</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -112,6 +122,53 @@ box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
 		</div>
 	</div>
 
+	<script>
+	function handleFileSelect(event) {
+		  const file = event.target.files[0]; // 선택한 파일 가져오기
+		  const reader = new FileReader();
+
+		  reader.onload = function(e) {
+		    const imageSrc = e.target.result;
+		    const previewElement = document.getElementById('preview');
+		    
+		    const img = new Image();
+		    img.src = imageSrc;
+		    
+		    img.onload = function() {
+		      const maxWidth = 100; // 원하는 최대 너비 값 설정
+		      const maxHeight = 100; // 원하는 최대 높이 값 설정
+		      
+		      // 이미지 크기 계산
+		      let width = img.width;
+		      let height = img.height;
+		      
+		      if (width > maxWidth) {
+		        height *= maxWidth / width;
+		        width = maxWidth;
+		      }
+		      
+		      if (height > maxHeight) {
+		        width *= maxHeight / height;
+		        height = maxHeight;
+		      }
+		      
+		      // 크기 조정된 이미지로 미리보기 엘리먼트 업데이트
+		      const resizedImg = document.createElement('img');
+		      resizedImg.src = imageSrc;
+		      resizedImg.width = width;
+		      resizedImg.height = height;
+		      
+		      const existingImg = document.getElementById('imgSrc');
+		      existingImg.parentNode.removeChild(existingImg);
+		      
+		      previewElement.innerHTML = '';
+		      previewElement.appendChild(resizedImg);
+		    };
+		  };
+
+		  reader.readAsDataURL(file);
+		}
+	</script>
 
 	<script src="resources/assets/js/jquery-3.6.0.min.js"></script>
 

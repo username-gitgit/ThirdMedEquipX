@@ -56,7 +56,7 @@
 						<div class="text-danger fw-bold fs-4 Sans">
 							<c:choose>
 								<c:when test="${not empty alertName && not empty alertStock}">
-							이상 항목: ${alertName}, 수량: ${alertStock}
+							이상 항목: ${alertName}, 수량: ${alertStock}, 부족분 : ${required}
 						</c:when>
 								<c:when test="${not empty OKmsg}">
 							${OKmsg}

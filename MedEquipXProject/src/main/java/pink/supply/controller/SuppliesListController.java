@@ -22,6 +22,7 @@ public class SuppliesListController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(SuppliesListController.class);
 
+	//변경한 관리자 넣기
 	
 	@Autowired
 	SuppliesListService supplyServ;
@@ -44,8 +45,10 @@ public class SuppliesListController {
 		    SuppliesListVO suppliesListVO = result.get();
 		    name = suppliesListVO.getName();
 	    	stock = suppliesListVO.getStock();
+	    	int required = safetyStock-stock;
 		    model.addAttribute("alertName", name);
 		    model.addAttribute("alertStock", stock);
+		    model.addAttribute("required", required);
 		}else {
 			model.addAttribute("OKmsg", "주요품목 재고 이상없음");
 		}
@@ -86,7 +89,6 @@ public class SuppliesListController {
 		logger.info("SuppliesDatas data is ={}", SuppliesDatas);
 		model.addAttribute("getQRDatas", SuppliesDatas);
 		return "itemReceived";
-		
 	}
 	
 	@PostMapping("updateItem")
@@ -96,8 +98,10 @@ public class SuppliesListController {
 		return "itemReceived";
 	}
 
-	//itemReceived.jsp 아직 없음
-	
+	@GetMapping("newItem")
+	public String addItem() {
+		return "newItem";
+	}
 	
 	
 	

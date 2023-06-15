@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import pink.supply.model.AttachVO;
+import pink.supply.model.SuppliesListVO;
 import pink.supply.service.UploadService;
 
 @Controller
@@ -21,7 +22,13 @@ public class UploadController {
     private UploadService upLoloadServ;
 	
 	 @PostMapping("/uploadForm")
-	    public String uploadForm(@RequestParam("file") MultipartFile[] file, RedirectAttributes redirectAttributes) {
+	    public String uploadForm(@RequestParam("file") MultipartFile[] file
+	    		, RedirectAttributes redirectAttributes, SuppliesListVO addSupply
+	    ) {
+		 
+		 //item datas insert
+		 upLoloadServ.itemInsert(addSupply);
+		 //images insert
 		 for (MultipartFile uploadedFile : file) {
 		 UUID uuid = UUID.randomUUID();
 

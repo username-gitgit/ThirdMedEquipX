@@ -4,18 +4,45 @@
 <mapper namespace="pink.supply.mapper.UploadMapper">
 
 <insert id="imgInsert">
-	INSERT INTO 
-		attach(
-		uuid
-		, uploadpath
-		, name
-		)
-	VALUES
+INSERT INTO 
+	attach(
+	uuid
+	, uploadpath
+	, name
+	)
+VALUES
+	(
+	#{uuid}
+	, #{uploadpath}
+	, #{name}
+	)
+</insert>
+
+<insert id="itemInsert">
+INSERT INTO 
+	medical_supplies 
 		(
-		#{uuid}
-		, #{uploadpath}
-		, #{name}
+		name
+		, specifications
+		, manufacturer
+		, category
+		, subcategory
+		, change_date
+		, stock
+		, visible
 		)
+VALUES
+		(
+		#{name}
+		, #{specifications}
+		, #{manufacturer}
+		, #{category}
+		, #{subcategory}
+		, default
+		, default
+		, default
+		)
+
 </insert>
 
 </mapper>

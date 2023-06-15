@@ -128,7 +128,7 @@
 					<!-- 아직 신규 물품 등록 newItem.jsp 파일 없음 -->			
 					<li><a href="/newItem"><img
 							src="../resources/assets/img/icons/quotation1.svg" alt="img"><span>
-								신규 물품 등록 (아직 없음)</span> </a></li>
+								신규 물품 등록</span> </a></li>
 					<li><a href="/releasedItem"><img
 							src="../resources/assets/img/icons/purchase1.svg" alt="img"><span>
 								출고 등록</span> </a></li>

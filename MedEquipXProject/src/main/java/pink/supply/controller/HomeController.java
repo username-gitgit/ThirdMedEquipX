@@ -22,7 +22,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
 		logger.info("Welcome home!");
-		return "dashboard";
+		return "redirect:/dashboard";
 	}
 	
 	@GetMapping("home")
