@@ -13,7 +13,6 @@ import pink.supply.service.OrderHistoryService;
 @Controller
 public class OrderHistoryController {
 	
-	private static final Logger  = LoggerFactory.getLogger(OrderHistoryController.class);
 	
 	@Autowired //의존성 주입 automatic dependency injection
 	OrderHistoryService orderServ; 
