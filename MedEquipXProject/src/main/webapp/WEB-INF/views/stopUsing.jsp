@@ -129,7 +129,8 @@
 										<td>${usingCall.category}</td>
 										<td>${usingCall.change_date}</td>
 										<td>${usingCall.in_charge}</td>
-										<td id="Stock_${usingCall.name}">${usingCall.stock}</td>
+										<td>${usingCall.quantity}</td>
+										<%-- <td id="Stock_${usingCall.name}">${usingCall.stock}</td> --%>
 									</tr>
 								</c:forEach>
 								<%-- <c:if test="${not empty getCategory}">

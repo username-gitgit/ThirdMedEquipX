@@ -14,6 +14,7 @@ public class StopUsingServiceImpl implements StopUsingService {
 	@Autowired 
 	StopUsingMapper stopMap;
 	
+	@Override
 	public ArrayList<StopUsingVO> callStopUsing(StopUsingVO stpUsing){
 		return stopMap.callStopUsing(stpUsing);
 	}

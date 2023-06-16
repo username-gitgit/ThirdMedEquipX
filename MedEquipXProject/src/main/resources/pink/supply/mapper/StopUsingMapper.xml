@@ -8,15 +8,14 @@ SELECT
 	, specifications
 	, manufacturer
 	, category
-	, subcategory
 	, change_date
 	, in_charge
 	, stock
-	, turnover_rate
 FROM
 	medical_supplies
 WHERE
-	visible = 'Y'
-ORDER BY 
-	change_date DESC
+	visible = 'N'
+<!-- ORDER BY 
+	change_date DESC -->
 </select>
+</mapper>

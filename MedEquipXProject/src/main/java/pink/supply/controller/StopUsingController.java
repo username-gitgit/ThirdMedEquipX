@@ -15,7 +15,7 @@ public class StopUsingController {
 	@Autowired
 	StopUsingService stopServ;
 	
-	@GetMapping("/stopUsing") //Annotation for mapping HTTP GET requests onto specific handler methods, a shortcut for @RequestMapping(method = RequestMethod.GET)
+	@GetMapping("stopUsing") //Annotation for mapping HTTP GET requests onto specific handler methods, a shortcut for @RequestMapping(method = RequestMethod.GET)
 	public String stopUsing(StopUsingVO stpUsing, Model model) {
 		model.addAttribute("usingCall", stopServ.callStopUsing(stpUsing));
 		return "stopUsing";
