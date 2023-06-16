@@ -50,16 +50,17 @@ box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
 		<div
 			class="page-wrapper d-flex align-items-start justify-content-center">
 			<div class="content">
-
 				<div class="row justify-content-center">
 					<div class="col-lg-6 card shadow rounded-4 border-0">
+					<form action="releasedItem" method="post">
 						<div class="card-body">
 							<div class="row">
 								<div class="page-header">
 									<div class="page-title text-center">
 										<h3 class="Sans fs-3">출고 등록</h3>
+									</div>
 								</div>
-							</div>
+							
 							<div class="col-lg-12 col-sm-6 col-12">
 								<div class="form-group">
 									<label>출고 부서</label> <input name="Department" type="text"
@@ -99,9 +100,9 @@ box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
 								<button type="submit"
 									class="btn btn-submit fs-5 fw-bolder d-inline-block col-12">출고하기</button>
 							</div>
-							</form>
 						</div>
 					</div>
+					</form>
 				</div>
 			</div>
 		</div>

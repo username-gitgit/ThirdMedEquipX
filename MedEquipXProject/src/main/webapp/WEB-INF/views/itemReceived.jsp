@@ -72,12 +72,6 @@ box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
 										class="inputStyle">
 								</div>
 							</div>
-							<div class="col-lg-12 col-sm-6 col-12">
-								<div class="form-group">
-									<label>현재고 </label> <input name="stock" type="text"
-										class="inputStyle">
-								</div>
-							</div>
 							<br>
 							<div class="col-lg-12 col-sm-6 col-12">
 								<div class="form-group">

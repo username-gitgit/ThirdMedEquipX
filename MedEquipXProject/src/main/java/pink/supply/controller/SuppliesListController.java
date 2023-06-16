@@ -74,7 +74,7 @@ public class SuppliesListController {
 		supplyServ.ForwardingDept(supList, relList);
 		logger.info("call update data is ={}", supList);
 		logger.info("call update data is ={}", relList);
-		return "dashboard";
+		return "redirect:/dashboard";
 		
 	}
 	

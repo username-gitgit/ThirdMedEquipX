@@ -88,7 +88,7 @@
 								type="submit" name="subcategory" value="3way">3way</button>
 							<button
 								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
-								type="submit" name="subcategory" value="non-drug painkillers">비약물
+								type="submit" name="subcategory" value="non-drug painkillers">비마약성
 								진통제</button>
 							<button
 								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
@@ -96,7 +96,7 @@
 								value="Nonsteroidal Painkillers">비스테로이드성 진통제</button>
 							<button
 								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
-								type="submit" name="subcategory" value="digestive organs">소화기관</button>
+								type="submit" name="subcategory" value="digestive organs">소화기관 작용제</button>
 							<button
 								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
 								type="submit" name="subcategory" value="Brain improvement">뇌
@@ -111,8 +111,7 @@
 								억제제</button>
 							<button
 								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
-								type="submit" name="subcategory" value="electrolyte solution">전해질
-								용액</button>
+								type="submit" name="subcategory" value="electrolyte solution">수액제재</button>
 						</form>
 					</div>
 
