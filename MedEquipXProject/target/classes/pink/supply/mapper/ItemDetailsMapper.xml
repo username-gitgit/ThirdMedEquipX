@@ -24,7 +24,6 @@
     	medical_supplies 
     SET
     	visible = 'N' <!-- visible = #{yn} -->
-    END
     WHERE
     	name = #{name}
 </update>
