@@ -22,10 +22,10 @@ public class ItemDetailsController {
 	
 	//Retrieving data
 	@GetMapping("itemDetails/{name}") //Annotation for mapping HTTP GET requests onto specific handler methods a shortcut for @RequestMapping(method = RequestMethod.GET)	
-	public String itemDetails(@PathVariable("name") String name, Model model) {
+	public String itemDetails(@PathVariable("name") String name, Model model, ItemDetailsVO imageCall) {
 	    
 	    ItemDetailsVO itemDetails = itemServ.getItemDetailsByName(name); // Retrieve the item details using the itemName
-	    
+	    model.addAttribute("callImage", itemServ.callImage(imageCall));
 	    model.addAttribute("itemDetails", itemDetails); // Add the item details to the model to be used in the view
 	    logger.info("itemDetails = {}", name);
 	    return "itemDetails";
