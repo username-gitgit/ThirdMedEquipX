@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <%
 	request.setCharacterEncoding("utf-8");
@@ -129,7 +129,7 @@
 										<td>${usingCall.category}</td>
 										<td>${usingCall.change_date}</td>
 										<td>${usingCall.in_charge}</td>
-										<td>${usingCall.quantity}</td>
+										<td>${usingCall.stock}</td>
 										<%-- <td id="Stock_${usingCall.name}">${usingCall.stock}</td> --%>
 									</tr>
 								</c:forEach>
@@ -154,29 +154,27 @@
 			</div>
 		</div>
 	</div>
-	<script src="resources/assets/js/jquery-3.6.0.min.js"></script>
+	<script src="../resources/assets/js/jquery-3.6.0.min.js"></script>
 
-	<script src="resources/assets/js/feather.min.js"></script>
+	<script src="../resources/assets/js/feather.min.js"></script>
 
-	<script src="resources/assets/js/jquery.slimscroll.min.js"></script>
+	<script src="../resources/assets/js/jquery.slimscroll.min.js"></script>
 
-	<script src="resources/assets/js/jquery.dataTables.min.js"></script>
-	<script src="resources/assets/js/dataTables.bootstrap4.min.js"></script>
+	<script src="../resources/assets/js/jquery.dataTables.min.js"></script>
+	<script src="../resources/assets/js/dataTables.bootstrap4.min.js"></script>
 
-	<script src="resources/assets/js/bootstrap.bundle.min.js"></script>
+	<script src="../resources/assets/js/bootstrap.bundle.min.js"></script>
 
-	<script src="resources/assets/plugins/select2/js/select2.min.js"></script>
+	<script src="../resources/assets/plugins/select2/js/select2.min.js"></script>
 
 	<script
-		src="resources/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-	<script src="resources/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+		src="../resources/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+	<script src="../resources/assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
-	<script src="resources/assets/js/script.js"></script>
+	<script src="../resources/assets/js/script.js"></script>
 
-	<script src="resources/js/stockAlert.js"></script>
+	<script src="../resources/js/stockAlert.js"></script>
 	<!-- 	<script src="resources/js/changeColor.js"></script> -->
 
 </body>
-
-
 </html>
