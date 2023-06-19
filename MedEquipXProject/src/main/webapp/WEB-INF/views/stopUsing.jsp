@@ -137,7 +137,7 @@
 		    type : 'POST',
 		    success : function(response) {
 			console.log('Data updated successfully'); // Handle the success response
-			//window.location.href = '/stopUsing';  // redirect the user to the desired URL //window.location.href = '/itemDetails/' + name;
+			window.location.href = '/stopUsing';  // redirect the user to the desired URL //window.location.href = '/itemDetails/' + name;
 		    },
 		    error : function(xhr, status, error) {
 			console.log('Error updating data:', error); // Handle the error response

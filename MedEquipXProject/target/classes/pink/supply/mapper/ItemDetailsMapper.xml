@@ -17,13 +17,22 @@
 		name = #{name} <!-- AND visible = 'Y' -->
 </select>
 
-<!-- 재사용 visible = 'Y' -> 사용 중지 visible = 'N' -->
-<!-- 사용 중지 visible = "N" -> 재사용 visible = "Y"-->
+<!-- visible = 'Y' -> visible = 'N' -->
 <update id="toggleVisible" parameterType="pink.supply.model.ItemDetailsVO">
     UPDATE
     	medical_supplies 
     SET
-    	visible = 'N' <!-- visible = #{yn} -->
+    	visible = 'N'
+    WHERE
+    	name = #{name}
+</update>
+
+<!-- visible = 'N' -> visible = 'Y'-->
+<update id="toggleVisibleYes" parameterType="pink.supply.model.ItemDetailsVO">
+    UPDATE
+    	medical_supplies 
+    SET
+    	visible = 'Y'
     WHERE
     	name = #{name}
 </update>
@@ -56,34 +65,9 @@ WHERE
 
 </mapper>
 
-<!-- 
-    UPDATE
-    	medical_supplies 
-    SET
-    	visible = CASE 
-	        WHEN visible = 'Y' THEN 'N'
-	        WHEN visible = 'N' THEN 'Y'
+<!--     UPDATE medical_supplies
+    SET visible = CASE
+        WHEN visible = 'Y' THEN 'N'
+        WHEN visible = 'N' THEN 'Y'
     END
-    WHERE
-    	name = #{name} -->
-
-<!-- previous codes -->
-<!-- 재사용 visible = 'Y' -> 사용 중지 visible = 'N' -->
-<!-- <update id="stopUsingItem" parameterType="pink.supply.model.ItemDetailsVO">
-UPDATE
-	medical_supplies 
-SET
-	visible = 'N'
-WHERE
-	name = #{name} and visible = 'Y'
-</update> -->
-
-<!-- 사용 중지 visible = "N" -> 재사용 visible = "Y"-->
-<!-- <update id="startUsingItem" parameterType="pink.supply.model.ItemDetailsVO">
-UPDATE
-	medical_supplies 
-SET
-	visible = 'Y'
-WHERE
-	name = #{name} and visible = 'N'
-</update> -->
+    WHERE name = #{name} -->
