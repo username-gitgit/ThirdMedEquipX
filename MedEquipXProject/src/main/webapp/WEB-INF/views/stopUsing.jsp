@@ -60,51 +60,6 @@
 							</div>
 						</div>
 					</div>
-
-					<!-- <div class="mb-3">
-						<form action="dashboard" method="get">
-							btn btn-submit 
-							원래 영어 단어: syringe catheter 3way non-drug painkillers Nonsteroidal Painkillers digestive organs Brain improvement Nervous Sanctions Allergic inhibitors electrolyte solution
-							<span class="fw-bold">분류</span>
-							<button
-								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
-								type="submit" name="subcategory" value="syringe">주사</button>
-							<button
-								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
-								type="submit" name="subcategory" value="catheter">카테터</button>
-							<button
-								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
-								type="submit" name="subcategory" value="3way">3way</button>
-							<button
-								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
-								type="submit" name="subcategory" value="non-drug painkillers">비약물
-								진통제</button>
-							<button
-								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
-								type="submit" name="subcategory"
-								value="Nonsteroidal Painkillers">비스테로이드성 진통제</button>
-							<button
-								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
-								type="submit" name="subcategory" value="digestive organs">소화기관</button>
-							<button
-								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
-								type="submit" name="subcategory" value="Brain improvement">뇌
-								기능 향상</button>
-							<button
-								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
-								type="submit" name="subcategory" value="Nervous Sanctions">신경
-								제재</button>
-							<button
-								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
-								type="submit" name="subcategory" value="Allergic inhibitors">알레르기
-								억제제</button>
-							<button
-								class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans"
-								type="submit" name="subcategory" value="electrolyte solution">전해질
-								용액</button>
-						</form>
-					</div> -->
-
 					<!-- Contents -->
 					<div class="table-responsive">
 						<table id="dataList" class="table  datanew">
@@ -117,36 +72,27 @@
 									<th>변경일</th>
 									<th>작성자</th>
 									<th>현재고</th>
+									<th>재사용</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach items="${usingCall}" var="usingCall">
 									<tr>
-										<td id="dataName" class="productimgname"><a
-											href="itemDetails/${usingCall.name}">${usingCall.name}</a></td>
+										<td>${usingCall.name}</td>
 										<td>${usingCall.specifications}</td>
 										<td>${usingCall.manufacturer}</td>
 										<td>${usingCall.category}</td>
 										<td>${usingCall.change_date}</td>
 										<td>${usingCall.in_charge}</td>
 										<td>${usingCall.stock}</td>
-										<%-- <td id="Stock_${usingCall.name}">${usingCall.stock}</td> --%>
+										<td>
+											<button type="button" id="toggleButton"
+												onclick="toggleVisibleYes('${usingCall.name}')"
+												class="border border-1 rounded border-0 fs-6 fw-bolder d-inline-block Sans">재사용</button>
+											<%-- <td id="Stock_${usingCall.name}">${usingCall.stock}</td> --%>
+										</td>
 									</tr>
 								</c:forEach>
-								<%-- <c:if test="${not empty getCategory}">
-									<c:forEach items="${getCategory}" var="getCategory">
-										<tr>
-											<td id="dataName" class="productimgname"><a
-												href="itemDetails/${getCategory.name}">${getCategory.name}</a></td>
-											<td>${getCategory.specifications}</td>
-											<td>${getCategory.manufacturer}</td>
-											<td>${getCategory.category}</td>
-											<td>${getCategory.change_date}</td>
-											<td>${getCategory.in_charge}</td>
-											<td id="Stock_${getCategory.name}">${getCategory.stock}</td>
-										</tr>
-									</c:forEach>
-								</c:if> --%>
 							</tbody>
 						</table>
 					</div>
@@ -174,7 +120,70 @@
 	<script src="../resources/assets/js/script.js"></script>
 
 	<script src="../resources/js/stockAlert.js"></script>
-	<!-- 	<script src="resources/js/changeColor.js"></script> -->
+	<!-- <script src="../resources/js/toggleVisible.js"></script> -->
+
+	<script>
+	console.log("toggleVisibleYes connect");
+	var button = document.getElementById('toggleButton');
+	function toggleVisibleYes(name) { // "name" 필요함
+
+	    var button = document.getElementById('toggleButton');
+
+	    if (button.innerText === '재사용') { //database: N
+
+		// 'DB 연결 할 값이 여기에 있어야 한다'
+		$.ajax({
+		    url : '/stopUsing/' + name + '/toggleVisibleYes', // use a forward slash (/) to separate the parts of the URL.
+		    type : 'POST',
+		    success : function(response) {
+			console.log('Data updated successfully'); // Handle the success response
+			//window.location.href = '/stopUsing';  // redirect the user to the desired URL //window.location.href = '/itemDetails/' + name;
+		    },
+		    error : function(xhr, status, error) {
+			console.log('Error updating data:', error); // Handle the error response
+		    }
+		});
+		
+		//database: Y -> N
+		// 대문자 N (No) 		    //Controller에 전달할 값
+		button.innerText = '사용 중지'; //버튼 문자 변경
+	    } else {
+		// 대문자 Y (Yes)		    //Controller에 전달할 값
+		button.innerText = '재사용'; //버튼 문자 변경
+	    }
+	}
+	</script>
+<!-- 	<script>
+	console.log("toggleVisibleYes connect");
+	var button = document.getElementById('toggleButton');
+	function toggleVisible(name) { // "name" 필요함
+
+	    var button = document.getElementById('toggleButton');
+
+	    if (button.innerText === '재사용') { //database: N
+
+		// 'DB 연결 할 값이 여기에 있어야 한다'
+		$.ajax({
+		    url : '/itemDetails/' + name + '/toggleVisible', // use a forward slash (/) to separate the parts of the URL.
+		    type : 'POST',
+		    success : function(response) {
+			console.log('Data updated successfully'); // Handle the success response
+			window.location.href = '/stopUsing'; // redirect the user to the desired URL //window.location.href = '/itemDetails/' + name; 
+		    },
+		    error : function(xhr, status, error) {
+			console.log('Error updating data:', error); // Handle the error response
+		    }
+		});
+	    
+		//database: N -> Y
+		// 대문자 Y (Yes)		    //Controller에 전달할 값
+		button.innerText = '사용 중지'; //버튼 문자 변경
+	    } else {
+		// 대문자 N (No) 		    //Controller에 전달할 값
+		button.innerText = '사용중'; //버튼 문자 변경
+	    }
+	}
+    </script> -->
 
 </body>
 </html>

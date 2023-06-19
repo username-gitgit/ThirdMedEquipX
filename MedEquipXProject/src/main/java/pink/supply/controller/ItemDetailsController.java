@@ -31,6 +31,7 @@ public class ItemDetailsController {
 	    return "itemDetails";
 	}
 	
+	//for itemDetails.jsp 사용 중지 버튼 클릭 visible: Yes -> No 
 	@PostMapping("itemDetails/{name}/toggleVisible") //Changing a visible column's value in a database
 	public String toggleVisible(@PathVariable("name") String name, ItemDetailsVO vData) {
 		logger.info("itemDetails = {}", vData);
@@ -38,36 +39,16 @@ public class ItemDetailsController {
 		return "redirect:/dashboard";
 		//return "redirect:/itemDetails/" + vData.getName(); // the user is redirected to the updated item details page after updating the visibility status of the item.
 	}
-
+	
+	//for stopUsing.jsp 재사용 버튼 클릭 visible: No -> Yes
+	@PostMapping("stopUsing/{name}/toggleVisibleYes") //Changing a visible column's value in a database
+	public String toggleVisibleYes(@PathVariable("name") String name, ItemDetailsVO vData) {
+		logger.info("itemDetails = {}", vData);
+		itemServ.toggleVisibleYes(vData);
+		return "redirect:/stopUsing";
+	}
 }
 
-//원래 코드
-/*@GetMapping("itemDetails/updateVisible")
-public String toggleVisible(ItemDetailsVO vData) {
-	logger.info("update porc = {}", vData);
-	itemServ.toggleVisible(vData);
-	return "redirect:/dashboard";
-}*/
-
-//visible 칼럼이 Y이면 N으로 바꾸고, visible 칼럼의 값이 N이면 Y로 바꿈
-/*		if (itemDetails.isCurrentlyVisible()) { //The isVisible method in the ItemDetailsVO class returns true if the visibility status is 'Y' and false if it is 'N'. 
-	itemDetails.setCurrentlyVisible(false); //called to set the visibility status of the item to 'N' (not visible).
-} else {
-	itemDetails.setCurrentlyVisible(true);
-}*/
-
-
-/* Original Code */ 
-
-/*@GetMapping("itemDetails/{name}") //Annotation for mapping HTTP GET requests onto specific handler methods a shortcut for @RequestMapping(method = RequestMethod.GET)	
-public String itemDetails(@PathVariable("name") String name, Model model) {
-    
-    ItemDetailsVO itemDetails = itemServ.getItemDetailsByName(name); // Retrieve the item details using the itemName
-    
-    model.addAttribute("itemDetails", itemDetails); // Add the item details to the model to be used in the view
-    logger.info("itemDetails = {}", name);
-    return "itemDetails";
-}*/
 
 /* Tried Encoding % in URL */
 /*@GetMapping("itemDetails/{name}")// Annotation for mapping HTTP GET requests onto specific handler methods a shortcut for @RequestMapping(method = RequestMethod.GET)

@@ -6,7 +6,7 @@ function toggleVisible(name) { // "name" 필요함
 
     var button = document.getElementById('toggleButton');
 
-    if (button.innerText === '사용 중지') {
+    if (button.innerText === '사용 중지') { //database: Y
 
 	// 'DB 연결 할 값이 여기에 있어야 한다'
 	$.ajax({
@@ -21,7 +21,8 @@ function toggleVisible(name) { // "name" 필요함
 		console.log('Error updating data:', error); // Handle the error response
 	    }
 	});
-
+	
+	//database: Y -> N
 	// 대문자 N (No) 		    //Controller에 전달할 값
 	button.innerText = '재사용'; //버튼 문자 변경
     } else {
@@ -32,19 +33,6 @@ function toggleVisible(name) { // "name" 필요함
 }
 
 /*
- * The Java code you have implemented handles the server-side logic, such as
- * updating the 'visible' column in the MySQL database when the button is
- * clicked. The JavaScript code, on the other hand, handles the client-side
- * behavior, which is updating the button text dynamically without reloading the
- * page.
- * 
- * When the button is clicked, the JavaScript code will execute in the browser,
- * and you can make an asynchronous request to the server-side Java code using
- * AJAX or fetch API to update the database. Once the response is received, you
- * can then update the button text in the browser using JavaScript.
- * 
- * 
- * 
  * var button = document.getElementById('toggleButton');
  * 
  * function toggleVisibility(name) { // "name" 필요함

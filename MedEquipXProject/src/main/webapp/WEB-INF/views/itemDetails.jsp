@@ -80,7 +80,6 @@
 											onclick="toggleVisible('${itemDetails.name}')"
 											class="btn btn-submit fs-6 fw-bolder d-inline-block Sans">
 											사용 중지</button>
-
 									</div>
 								</div>
 							</form>

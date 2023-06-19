@@ -26,6 +26,12 @@ public class ItemDetailsServiceImpl implements ItemDetailsService{
 		itemMap.toggleVisible(vData);
 		
 	}
+	
+	@Override
+	public void toggleVisibleYes(ItemDetailsVO vData) {
+		itemMap.toggleVisibleYes(vData);
+		
+	}
 
 	@Override
 	public ItemDetailsVO callImage(ItemDetailsVO imageCall) {
